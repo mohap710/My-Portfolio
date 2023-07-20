@@ -1,0 +1,104 @@
+@import url("./utils/animations.css");
+:root {
+  --black: #051014;
+  --rich-black: #030511;
+  --grey: #b7bccc;
+  --dark-blue: #1d3152;
+  --light-blue: #2254c7;
+  --soft-blue: #5c97bf;
+  --whitesmoke: #f1edee;
+  --font-family: Arial;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 2px solid red;
+}
+
+section,
+footer {
+  min-height: 90vh;
+  padding-block: 3rem;
+  padding-inline: 2rem;
+}
+footer {
+  display: flex;
+  color: aliceblue;
+  background: linear-gradient(to left, #03822b, #03002b);
+}
+section:nth-child(odd) {
+  border: 1px solid green;
+}
+section:nth-child(even) {
+  border: 1px solid blue;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
+  color: var(--whitesmoke);
+  background-color: hsla(231, 70%, 3%, 1);
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(204, 48%, 45%, 0.64) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 2%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
+    radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
+}
+
+.intro > h1 {
+  font-size: calc(2rem + 1.5vw);
+  word-spacing: 6px;
+  text-transform: capitalize;
+  margin-block: 3rem;
+  background: linear-gradient(to left, var(--soft-blue), var(--whitesmoke));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.intro > p {
+  color: var(--grey);
+  font-size: calc(0.7rem + 0.5vw);
+  font-weight: 500;
+  line-height: 1.6;
+}
+/* .social {
+  width: 70%;
+  padding: 1rem;
+  border: 3px dashed goldenrod;
+} */
+.actions {
+  margin-block: 2rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-image {
+  position: relative;
+  border: 5px solid red;
+  border-radius: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+.stack {
+  margin-inline: -2rem;
+  padding-block: 2rem;
+  border: 1px solid gold;
+  min-height: 200px;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+  .intro {
+    max-width: 50%;
+  }
+  .hero-image {
+    width: 80%;
+  }
+}

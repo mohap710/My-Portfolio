@@ -1,0 +1,128 @@
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-block: 2rem;
+}
+
+.card {
+  min-height: 250px;
+  border: 1px solid darkgray;
+}
+.btn {
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--whitesmoke);
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 3rem;
+  overflow: hidden;
+  text-decoration: none;
+  will-change: transform;
+  z-index: 0;
+  transition: all ease-in-out 200ms;
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border: 2px solid var(--light-blue);
+}
+.btn-outline-primary::after {
+  background: var(--light-blue);
+  background: linear-gradient(to left, var(--soft-blue), var(--light-blue));
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+
+.btn-outline-primary:hover::after {
+  transform: translate(0, 0);
+}
+.btn-outline-primary:hover {
+  border: 2px solid transparent;
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.btn-primary {
+  background: linear-gradient(to left, var(--soft-blue), var(--light-blue));
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+}
+
+/* .flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.justify-content-center {
+  justify-content: center;
+}
+.justify-content-around {
+  justify-content: space-around;
+}
+.justify-content-between {
+  justify-content: space-between;
+}
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.66%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.66%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.66%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.66%;
+}
+.col-12 {
+  width: 100%;
+} */
+
+/* Flex gap */
+.gap-1 {
+  gap: 1rem !important;
+}
+.gap-2 {
+  gap: 2rem !important;
+}
