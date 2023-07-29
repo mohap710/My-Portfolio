@@ -1,4 +1,6 @@
 @import url("utils/reset.css");
 /* @import url("./vendor/bootstrap.min.css"); */
+/* @import url("./vendor/uikit.min.css"); */
 @import url("utils/utils.css");
-@import url(styles.css);
+@import url("utils/animations.css");
+@import url("styles.css");
