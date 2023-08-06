@@ -9,65 +9,107 @@
   transform: rotate(315deg) translate(7px, -7px);
 }
 /* hero section heading */
-@keyframes gradient-text-wave {
+@keyframes gradient-wave {
   0% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 0%,
-      var(--whitesmoke) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-image: radial-gradient(
+        at 0% 0%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 100% 5%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 82% 99%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
+  }
+  5% {
+    background-image: radial-gradient(
+        at 15% 15%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 115% 20%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 99% 114%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
+  }
+  10% {
+    background-image: radial-gradient(
+        at 30% 30%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 130% 35%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 114% 129%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
+  }
+  15% {
+    background-image: radial-gradient(
+        at 45% 45%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 145% 50%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 129% 144%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
   }
   20% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 20%,
-      var(--whitesmoke) 80%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  40% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 40%,
-      var(--whitesmoke) 60%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  60% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 60%,
-      var(--whitesmoke) 40%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  80% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 80%,
-      var(--whitesmoke) 20%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-image: radial-gradient(
+        at 60% 60%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 160% 65%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 144% 159%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
   }
   100% {
-    background: linear-gradient(
-      to left,
-      var(--soft-blue) 100%,
-      var(--whitesmoke) 0%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-image: radial-gradient(
+        at 75% 75%,
+        hsla(204, 48%, 45%, 0.64) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 175% 80%,
+        hsla(217, 91%, 31%, 0.74) 0px,
+        transparent 50%
+      ),
+      radial-gradient(
+        at 159% 164%,
+        hsla(213, 100%, 50%, 0.41) 0px,
+        transparent 50%
+      );
   }
 }
