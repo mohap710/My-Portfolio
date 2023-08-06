@@ -12,7 +12,14 @@ const menubtn = document.querySelector(".menu-btn")
 
 menubtn.addEventListener("click", () => {
 	nav.classList.toggle("menu-opened")
-	// nav.classList.contains("menu-opened") ?
-	// 	main.style.marginLeft = "45vw" :
-	// 	main.style.marginLeft = "0"
+	if (nav.classList.contains("menu-opened")) {
+		menubtn.style.position = "fixed"
+		menubtn.style.right = "55%"
+		main.style.marginLeft = "60vw"
+	}
+	else {
+		main.style.marginLeft = "0"
+		menubtn.style.position = "initial"
+		menubtn.style.right = "unset"
+	}
 })
