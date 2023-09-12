@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "Patrick Hand";
+  src: url("../fonts/PatrickHand-Regular.ttf");
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: "League Spartan", sans-serif;
+  font-family: "Patrick Hand", cursive;
+  font-weight: normal;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+button {
+  border: transparent;
+  border-radius: 0.5rem;
+}
+:root {
+  --black: #051014;
+  --rich-black: #030511;
+  --grey: #b7bccc;
+  --dark-blue: #1d3152;
+  --light-blue: #2254c7;
+  --soft-blue: #5c97bf;
+  --whitesmoke: #f1edee;
+  --gradient: radial-gradient(
+      at 0% 0%,
+      hsla(204, 48%, 45%, 0.64) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 5%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
+    radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+section {
+  min-height: 100vh;
+  padding: 2rem 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    padding: 3rem 5rem;
+  }
+  .about-me {
+    flex-direction: row;
+  }
+  .skills {
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem; */
+    border: 3px solid red;
+  }
+}
