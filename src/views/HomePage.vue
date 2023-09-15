@@ -32,6 +32,8 @@ const testimonials = [
     img: "src/assets/images/20230806_055537-removebg-preview.png",
   },
 ];
+import { useProjectStore } from "../stores/projects";
+const projects = useProjectStore().projects;
 </script>
 <template>
   <HeroSection />
@@ -49,7 +51,16 @@ const testimonials = [
 
   <section class="projects">
     <h2 class="section-title">Projects</h2>
-    <project-showcase />
+    <project-showcase
+      v-for="project in projects"
+      :id="project.id"
+      :title="project.title"
+      :summary="project.summary"
+      :role="project.role"
+      :stack="project.stack"
+      :links="project.links"
+      :screenshot="project.screenshot"
+    />
   </section>
 
   <section class="testimonials">
