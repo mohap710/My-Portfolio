@@ -1,42 +1,73 @@
 <script setup>
-import { RouterLink } from "vue-router";
+const props = defineProps({
+  id: Number,
+  title: String,
+  summary: String,
+  role: String,
+  stack: Array,
+  links: Object,
+  screenshot: String,
+});
+const stackImages = props.stack.map(
+  (el) => `/src/assets/images/stack/${el}.png`
+);
+console.log(stackImages);
+// import "swiper/element/css/autoplay";
 </script>
 
 <template>
   <div class="project-card">
     <div class="info">
       <h4 class="project-title">
-        <span class="number">01.</span>
-        Project 1
+        <span class="number">{{ id }}.</span>
+        {{ title }}
       </h4>
       <div class="summary">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nobis
-          quia vero impedit ipsa id cumque aliquid molestias itaque, ex, cum
-          assumenda. Laborum nisi soluta quibusdam ab repellendus doloremque,
-          iure labore tempora omnis impedit. Iusto minus enim ullam sapiente
-          dolorem ad, sit ipsam harum cumque aperiam debitis esse reprehenderit
-          sunt nisi voluptatem, odit iure tempora asperiores. Doloribus fugit
-          vitae nemo.
-        </p>
+        <p>{{ summary }}</p>
         <div class="tech-info">
-          <div class="role">Role: Front-end Dev</div>
+          <div class="role">Role: {{ role }}</div>
           <div class="stack">
-            <img src="../assets/images/stack/vuejs.png" alt="" />
-            <img src="../assets/images/stack/nodejs.png" alt="" />
-            <img src="../assets/images/stack/graphql.png" alt="" />
+            <img v-for="skill in stackImages" :src="skill" :alt="skill" />
           </div>
         </div>
         <div class="actions">
-          <router-link to="/" class="btn btn-primary">View website</router-link>
-          <router-link to="/" class="btn btn-github"
+          <a
+            v-if="links.live"
+            target="_blank"
+            :href="links.live"
+            class="btn btn-primary"
+            >View website</a
+          >
+          <a
+            v-if="links.github"
+            target="_blank"
+            :href="links.github"
+            class="btn btn-github"
             ><span>View on</span>
-          </router-link>
+          </a>
         </div>
       </div>
     </div>
     <div class="mockup">
-      <img src="../assets/images/projects/chat-app.png" alt="" />
+      <swiper-container
+        slides-per-view="1"
+        speed="1000"
+        loop="true"
+        navigation="true"
+        pagination="true"
+      >
+        <swiper-slide>
+          <img src="@images/projects/SN1.png" loading="lazy" alt="" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="@images/projects/SN2.png" loading="lazy" alt="" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="@images/projects/SN3.png" loading="lazy" alt="" />
+        </swiper-slide>
+        ...
+      </swiper-container>
+      <!-- <img :src="screenshot" alt="" /> -->
     </div>
   </div>
 </template>
@@ -48,6 +79,8 @@ import { RouterLink } from "vue-router";
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  min-height: 85vh;
+  margin-block-end: 2rem;
 }
 
 .project-title {
@@ -123,8 +156,7 @@ span.number {
   width: 32px;
 }
 .mockup {
-  max-width: 560px;
-  aspect-ratio: 16 / 9;
+  max-width: 500px;
 }
 .row {
   flex-direction: row;
@@ -144,6 +176,9 @@ span.number {
     padding: 2rem 5rem;
     max-width: 50%;
   }
+  /* .project-card{
+    margin-bottom: 10rem;
+  } */
 
   .project-title,
   .summary {
@@ -164,5 +199,12 @@ span.number {
     left: -10%;
     font-weight: 900;
   }
+}
+swiper-container::part(bullet-active) {
+  background-color: var(--soft-blue);
+}
+swiper-container::part(button-next),
+swiper-container::part(button-prev) {
+  color: var(--soft-blue);
 }
 </style>
