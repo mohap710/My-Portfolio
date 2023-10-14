@@ -1,75 +1,61 @@
 <script setup>
-const props = defineProps({
-  id: Number,
-  title: String,
-  summary: String,
-  role: String,
-  stack: Array,
-  links: Object,
-  screenshot: String,
-});
-const stackImages = props.stack.map(
-  (el) => `/src/assets/images/stack/${el}.png`
-);
-console.log(stackImages);
-// import "swiper/element/css/autoplay";
+import { useProjectStore } from "../stores/projects";
+const { projects, stackpath } = useProjectStore();
 </script>
 
 <template>
-  <div class="project-card">
-    <div class="info">
-      <h4 class="project-title">
-        <span class="number">{{ id }}.</span>
-        {{ title }}
-      </h4>
-      <div class="summary">
-        <p>{{ summary }}</p>
-        <div class="tech-info">
-          <div class="role">Role: {{ role }}</div>
-          <div class="stack">
-            <img v-for="skill in stackImages" :src="skill" :alt="skill" />
+  <section class="projects">
+    <h2 class="section-title">Projects</h2>
+    <div v-for="project in projects" class="project-card">
+      <div class="info">
+        <h4 class="project-title">
+          <span class="number">{{ project.id }}.</span>
+          {{ project.title }}
+        </h4>
+        <div class="summary">
+          <p>{{ project.summary }}</p>
+          <div class="tech-info">
+            <div class="role">Role: {{ project.role }}</div>
+            <div class="stack">
+              <img
+                v-for="skill in project.stack"
+                :src="`${stackpath + skill}.png`"
+                :alt="skill"
+              />
+            </div>
+          </div>
+          <div class="actions">
+            <a
+              v-if="project.liveLink"
+              target="_blank"
+              :href="project.liveLink"
+              class="btn btn-primary"
+              >View website</a
+            >
+            <a
+              v-if="project.githubLink"
+              target="_blank"
+              :href="project.githubLink"
+              class="btn btn-github"
+              ><span>View on</span>
+            </a>
           </div>
         </div>
-        <div class="actions">
-          <a
-            v-if="links.live"
-            target="_blank"
-            :href="links.live"
-            class="btn btn-primary"
-            >View website</a
-          >
-          <a
-            v-if="links.github"
-            target="_blank"
-            :href="links.github"
-            class="btn btn-github"
-            ><span>View on</span>
-          </a>
-        </div>
+      </div>
+      <div class="mockup">
+        <swiper-container
+          slides-per-view="1"
+          speed="1000"
+          loop="true"
+          pagination="true"
+        >
+          <swiper-slide v-for="(img, idx) in project.screenshots">
+            <img :src="img" loading="lazy" :alt="project.title + idx" />
+          </swiper-slide>
+        </swiper-container>
       </div>
     </div>
-    <div class="mockup">
-      <swiper-container
-        slides-per-view="1"
-        speed="1000"
-        loop="true"
-        navigation="true"
-        pagination="true"
-      >
-        <swiper-slide>
-          <img src="@images/projects/SN1.png" loading="lazy" alt="" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@images/projects/SN2.png" loading="lazy" alt="" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@images/projects/SN3.png" loading="lazy" alt="" />
-        </swiper-slide>
-        ...
-      </swiper-container>
-      <!-- <img :src="screenshot" alt="" /> -->
-    </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
@@ -91,10 +77,13 @@ console.log(stackImages);
 }
 .summary {
   position: relative;
-  max-width: 60ch;
+  max-width: 70ch;
   margin-inline: auto;
-  line-height: 1.5;
+  line-height: 2;
   text-align: justify;
+}
+.summary > p {
+  font-size: 1.1rem;
 }
 span.number {
   position: relative;
@@ -199,12 +188,5 @@ span.number {
     left: -10%;
     font-weight: 900;
   }
-}
-swiper-container::part(bullet-active) {
-  background-color: var(--soft-blue);
-}
-swiper-container::part(button-next),
-swiper-container::part(button-prev) {
-  color: var(--soft-blue);
 }
 </style>
