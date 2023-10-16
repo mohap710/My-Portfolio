@@ -11,22 +11,23 @@ const currentYear = new Date().getFullYear();
 footer {
   position: relative;
   color: var(--rich-black);
-  padding: 1rem;
-}
-footer::before {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 50%;
-  background: linear-gradient(var(--soft-blue), var(--whitesmoke));
-  min-height: 5px;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
+  padding-block: 1rem;
+  color: var(--whitesmoke);
+  /* background-image: url("../../assets/images/background-pattern.svg"); */
+  background-color: var(--rich-black);
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(204, 48%, 45%, 0.64) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 5%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
+    radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 300% 300%;
 }
 
 .signture {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 </style>
