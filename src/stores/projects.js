@@ -29,7 +29,7 @@ export const useProjectStore = defineStore("projects", () => {
 			title: "online-edu",
 			summary: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo molestiae dolorum a vitae quo voluptates velit corporis sapiente facere magni itaque eius, atque quasi aspernatur repellendus accusantium dicta quisquam, ullam, culpa eveniet amet quidem doloremque voluptatem. Quisquam veritatis nam adipisci recusandae a reprehenderit aspernatur.`,
 			role: "Frontend developer",
-			stack: ["javascript"],
+			stack: ["html", "css", "javascript"],
 			liveLink: "https://mohap710.github.io/online-edu",
 			screenshots: [imgPath + "online-edu1.png", imgPath + "online-edu2.png", imgPath + "online-edu3.png"]
 
@@ -40,7 +40,7 @@ export const useProjectStore = defineStore("projects", () => {
 			title: "FrontendMentor Challenges",
 			summary: `Frontend Mentor is a website that provides front-end coding challenges using a real-life workflow. It allows you to improve your HTML, CSS, and JavaScript skills by building real-world projects.`,
 			role: "Frontend developer",
-			stack: ["javascript"],
+			stack: ["html", "css"],
 			liveLink: "https://www.frontendmentor.io/profile/mohap710",
 			screenshots: [imgPath + "chat-app.png", imgPath + "fylo.png", imgPath + "data-storage.png", imgPath + "social-proof.png", imgPath + "testimonial-grid.png"]
 
