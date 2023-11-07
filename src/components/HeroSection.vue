@@ -1,27 +1,20 @@
 <template>
   <section class="hero">
     <div class="intro pt-2">
-      <h1 class="typewriter">Hi, I'm Mohab</h1>
+      <h1 class="typewriter">I'm Mohab</h1>
       <h4>
-        a web developer with a difference. <br />I don't just build websites,<br />
-        I build relationships.
+        a <span class="marker">web developer</span> with a difference. <br />I
+        don't just <span class="marker">build</span> websites,<br />
+        I build <span class="marker">relationships.</span>
       </h4>
-      <!-- <p>
-        <br />Join me on a journey of creating captivating web experiences that
-        empower your brand to shine brightly in the vast online galaxy.
-      </p> -->
-
       <div class="actions">
-        <button class="btn btn-primary">Hire Me</button>
+        <button class="btn btn-primary">Let's build websites</button>
         <button class="btn btn-outline-primary">Discover My Art</button>
       </div>
     </div>
 
     <div class="hero-image">
-      <img
-        src="@/assets/images/20230806_055708-removebg-preview.png"
-        alt="ME"
-      />
+      <img src="@/assets/images/hero1.png" alt="ME" />
     </div>
     <!-- wave shape -->
     <div class="bottom-wave">
@@ -50,7 +43,26 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { getImageUrl } from "@/utils/imgUrl";
+onMounted(() => {
+  const img = document.querySelector("img");
+  function changeImg(src) {
+    img.setAttribute("src", getImageUrl(src));
+  }
+  img.addEventListener("mouseenter", () => {
+    changeImg("hero2.png");
+    img.classList.remove("fade-in-right");
+    img.classList.add("fade-in-left");
+  });
+  img.addEventListener("mouseleave", () => {
+    changeImg("hero1.png");
+    img.classList.remove("fade-in-left");
+    img.classList.add("fade-in-right");
+  });
+});
+</script>
 
 <style>
 .hero {
@@ -74,15 +86,7 @@
   transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
   /* animation: gradient-wave ease 10s infinite; */
 }
-/* .hero::after {
-  content: "";
-  display: block;
-  width: 100%;
-  position: absolute;
-  bottom: 10px;
-  background-image: url("../assets/images/wave.svg");
-  background-repeat: no-repeat;
-} */
+
 .bottom-wave {
   position: absolute;
   bottom: 0;
@@ -110,17 +114,22 @@
   word-spacing: 0.5rem;
 }
 .intro > h4 {
-  font-size: calc(1rem + 1vw);
+  font-size: calc(1.2rem + 1vw);
   font-weight: 800;
-  color: var(--whitesmoke);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--whitesmoke);
   text-transform: capitalize;
+}
+.marker {
+  color: var(--whitesmoke);
+  font-size: calc(1.3rem + 1vw);
 }
 .intro > h1 {
   font-size: calc(4rem + 1.5vw);
   font-weight: 900;
-  text-transform: capitalize;
+  text-transform: uppercase;
   margin-bottom: 1.5rem;
-  -webkit-text-stroke: 0.5px var(--whitesmoke);
+  -webkit-text-stroke: 1px var(--whitesmoke);
   background: linear-gradient(to left, var(--soft-blue), var(--whitesmoke));
   background-clip: text;
   -webkit-background-clip: text;
@@ -137,14 +146,8 @@
   position: relative;
   border-radius: 100%;
   width: 50%;
-  transition: 0.5s ease-in-out;
-  filter: brightness(0) invert(1);
-}
-.hero-image:hover {
-  opacity: 0.7;
-}
-.hero-image > img {
   transform: rotateY(180deg);
+  overflow: hidden;
 }
 
 @media (width >= 768px) {
