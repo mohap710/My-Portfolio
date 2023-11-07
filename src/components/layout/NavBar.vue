@@ -66,10 +66,9 @@ header {
   transition: all 300ms ease-in-out;
 }
 .logo {
-  font-size: calc(1rem + 1.5vw);
+  font-size: calc(1.2rem + 1.5vw);
   font-weight: 900;
   color: var(--whitesmoke);
-  filter: brightness(0) invert(0.8);
   z-index: 1000;
 }
 nav {
@@ -87,9 +86,7 @@ nav {
     radial-gradient(at 100% 5%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
     radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
 }
-.colored-nav .logo {
-  color: var(--whitesmoke);
-}
+
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -188,9 +185,6 @@ nav {
     /* background-color: var(--whitesmoke); */
     transform-origin: left top;
     transform: rotate(-90deg) translateX(-100%);
-  }
-  .logo {
-    filter: unset;
   }
   .nav-links {
     position: absolute;
