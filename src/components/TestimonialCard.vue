@@ -20,59 +20,107 @@ const props = defineProps({
 </script>
 <template>
   <div class="testimonial-card">
+    <div class="media"></div>
     <div class="avatar">
-      <img :src="img" alt="" />
+      <div class="img-wrapper">
+        <img :src="img" alt="" />
+      </div>
     </div>
-    <q>{{ quote }}</q>
-    <h4 class="name mt-3">{{ name }}</h4>
-    <h6 class="role">{{ role }}</h6>
+    <div class="content">
+      <q>{{ quote }}</q>
+      <h4 class="name mt-3">{{ name }}</h4>
+      <h6 class="role mb-3">{{ role }}</h6>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .testimonial-card {
   position: relative;
-  min-height: 150px;
-  padding: 3rem;
+  max-width: 300px;
+  min-height: 400px;
+  padding: 2rem;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--whitesmoke);
-  border-radius: 10px;
-  box-shadow: 2px 5px 10px var(--black);
+  text-align: center;
+  color: var(--dark-blue);
+  background: var(--soft-blue);
+  border-radius: 32px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 0 var(--dark-blue),
+    inset 0 -15px 0 rgba(255, 255, 255, 0.25);
+  overflow: hidden;
 }
 .testimonial-card::before {
   content: "";
   display: block;
   position: absolute;
-  top: -60px;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  background-color: white;
-}
-.avatar {
-  position: absolute;
-  top: -55px;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  animation: floating-avatar both ease-in-out 800ms infinite alternate;
-  transition: 2s;
-  overflow: hidden;
+  top: -120px;
+  left: -34%;
+  width: 100%;
+  height: 110%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  transform: rotate(35deg);
+  pointer-events: none;
+  filter: blur(5px);
 }
 
+.avatar {
+  position: absolute;
+  top: 0;
+  width: 140px;
+  height: 120px;
+  background-color: white;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  box-shadow: 0 10px 0 var(--dark-blue),
+    inset 0 -8px 0 rgba(255, 255, 255, 0.555);
+  z-index: 10;
+}
+.avatar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 50px;
+  aspect-ratio: 1;
+  border-top-right-radius: 50px;
+  box-shadow: 15px -15px 0 15px white;
+  background-color: transparent;
+}
+.avatar::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -50px;
+  width: 50px;
+  aspect-ratio: 1;
+  border-top-left-radius: 50px;
+  box-shadow: -15px -15px 0 10px white;
+  background-color: transparent;
+}
+
+.img-wrapper {
+  width: 90px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin: auto;
+  border-bottom: 5px solid black;
+  overflow: hidden;
+}
+.content {
+  margin-top: 50%;
+}
 q {
-  color: var(--black);
-  max-width: 45ch;
+  font-weight: 900;
   margin-top: 0.5rem;
   text-align: justify;
-  line-height: 1.6;
-}
-.name,
-.role {
-  color: var(--rich-black);
+  line-height: 1.7;
 }
 </style>
