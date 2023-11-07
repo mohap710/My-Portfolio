@@ -1,8 +1,14 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { onMounted } from "vue";
+const navLinks = [
+  { name: "Home", to: "home" },
+  { name: "About", to: "about" },
+  { name: "Portfolio", to: "portfolio" },
+  { name: "Testimonials", to: "testimonials" },
+  { name: "Contact", to: "contact" },
+];
 // navbar animation
-
 onMounted(() => {
   const navToggler = document.querySelector(".nav-toggler");
   const nav = document.querySelector("#main-nav");
@@ -39,11 +45,9 @@ onMounted(() => {
     </button>
     <nav>
       <ul id="main-nav" class="nav-links" data-visible="false">
-        <li class="nav-link"><router-link to="/">Home</router-link></li>
-        <li class="nav-link"><router-link to="/">About</router-link></li>
-        <li class="nav-link"><router-link to="/">Portfolio</router-link></li>
-        <li class="nav-link"><router-link to="/">Testimonial</router-link></li>
-        <li class="nav-link"><router-link to="/">Contact</router-link></li>
+        <li class="nav-link" v-for="link in navLinks" :key="link">
+          <router-link to="/">{{ link.name }}</router-link>
+        </li>
       </ul>
     </nav>
   </header>
@@ -114,7 +118,7 @@ nav {
   font-size: 6vh;
   text-transform: uppercase;
   color: transparent;
-  -webkit-text-stroke: 1px #ececee;
+  -webkit-text-stroke: 2px #ececee;
   line-height: 1.3;
   font-weight: 800;
   display: inline-block;
@@ -130,8 +134,9 @@ nav {
   position: absolute;
   top: 50%;
   content: "";
-  height: 2vh;
-  margin-top: -1vh;
+  height: 1vh;
+  transform: skew(-12deg);
+  margin-top: 1vh;
   width: 0;
   left: 0;
   background-color: var(--soft-blue);
@@ -196,7 +201,7 @@ nav {
     bottom: 0;
   }
   .nav-link > a {
-    font-size: 1rem;
+    font-size: 1.2rem;
     -webkit-text-stroke: unset;
     color: var(--whitesmoke);
   }
