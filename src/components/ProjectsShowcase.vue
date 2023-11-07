@@ -1,6 +1,8 @@
 <script setup>
+import { EffectFlip, Autoplay } from "swiper/modules";
 import { useProjectStore } from "../stores/projects";
-const { projects, stackpath } = useProjectStore();
+import { getImageUrl } from "../utils/imgUrl";
+const { projects } = useProjectStore();
 </script>
 
 <template>
@@ -17,11 +19,9 @@ const { projects, stackpath } = useProjectStore();
           <div class="tech-info">
             <div class="role">Role: {{ project.role }}</div>
             <div class="stack">
-              <img
-                v-for="skill in project.stack"
-                :src="`${stackpath + skill}.png`"
-                :alt="skill"
-              />
+              <abbr :title="skill" v-for="skill in project.stack">
+                <img :src="getImageUrl(`stack/${skill}.png`)" :alt="skill" />
+              </abbr>
             </div>
           </div>
           <div class="actions">
@@ -44,13 +44,20 @@ const { projects, stackpath } = useProjectStore();
       </div>
       <div class="mockup">
         <swiper-container
+          :modules="[EffectFlip, Autoplay]"
+          effect="flip"
           slides-per-view="1"
+          autoplay-delay="3000"
           speed="1000"
           loop="true"
           pagination="true"
         >
           <swiper-slide v-for="(img, idx) in project.screenshots">
-            <img :src="img" loading="lazy" :alt="project.title + idx" />
+            <img
+              :src="getImageUrl(img)"
+              loading="lazy"
+              :alt="project.title + idx"
+            />
           </swiper-slide>
         </swiper-container>
       </div>
@@ -66,12 +73,14 @@ const { projects, stackpath } = useProjectStore();
   flex-wrap: wrap;
   gap: 2rem;
   min-height: 85vh;
-  margin-block-end: 2rem;
+  margin-block-end: 5rem;
 }
-
+.project-card:nth-child(odd) {
+  flex-direction: row-reverse;
+}
 .project-title {
   position: relative;
-  font-size: calc(1rem + 3vw);
+  font-size: calc(1rem + 2vw);
   font-weight: 900;
   margin-bottom: 1rem;
 }
@@ -107,10 +116,11 @@ span.number {
   justify-content: center;
   align-items: center;
 }
-.stack > img {
+.stack img {
   width: 40px;
   aspect-ratio: 1;
 }
+
 .actions {
   margin-top: 1rem;
   justify-content: space-evenly;
@@ -188,5 +198,10 @@ span.number {
     left: -10%;
     font-weight: 900;
   }
+}
+
+/* remove shadow from swiper cube effect */
+.swiper-cube-shadow::before {
+  opacity: 0.3 !important;
 }
 </style>
