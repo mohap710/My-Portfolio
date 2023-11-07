@@ -10,30 +10,6 @@
         that are intuitive and engaging for your users.
       </p>
       <div class="skills-container">
-        <!-- <div id="atom">
-              <div class="orbit">
-                <div class="path">
-                  <div class="electron"></div>
-                </div>
-              </div>
-              <div class="orbit">
-                <div class="path">
-                  <div class="electron"></div>
-                  <div class="electron"></div>
-                </div>
-              </div>
-              <div class="orbit">
-                <div class="path">
-                  <div class="electron"></div>
-                </div>
-              </div> -->
-        <!-- <div class="orbit">
-                <div class="path">
-                  <div class="electron"></div>
-                </div>
-              </div> 
-              <div id="nucleus"></div>
-            </div> -->
         <!-- <div class="skills">
 
               <div class="skill">
