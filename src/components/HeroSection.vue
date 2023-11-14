@@ -1,6 +1,65 @@
+<script setup>
+import { onMounted } from "vue";
+import { getImageUrl } from "@/utils/imgUrl";
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/mohap710",
+    img: "github.svg",
+  },
+  {
+    name: "Linkedin",
+    url: "https://www.linkedin.com/in/mohab-mohammed-salman/",
+    img: "linkedin.svg",
+  },
+  {
+    name: "Email",
+    url: "mailto:mohap710@gmail.com",
+    img: "email.svg",
+  },
+];
+onMounted(() => {
+  // animate hero image
+  const img = document.querySelector(".hero-image > img");
+  function changeImg(src) {
+    img.setAttribute("src", getImageUrl(src));
+  }
+  img.addEventListener("mouseenter", () => {
+    changeImg("hero2.webp");
+    img.classList.remove("fade-in-right");
+    img.classList.add("fade-in-left");
+  });
+  img.addEventListener("mouseleave", () => {
+    changeImg("hero1.webp");
+    img.classList.remove("fade-in-left");
+    img.classList.add("fade-in-right");
+  });
+  // Change social links colors
+  const linksContainer = document.querySelector(".social-links");
+  window.addEventListener("scroll", () => {
+    window.scrollY > 100
+      ? linksContainer.style.setProperty("filter", "unset")
+      : linksContainer.style.setProperty("filter", "brightness(0) invert(1)");
+  });
+});
+</script>
+
 <template>
   <section class="hero">
     <div class="intro pt-2">
+      <ul class="social-links">
+        <li v-for="link in socialLinks" :key="link">
+          <a
+            :href="link.url"
+            data-toggle="tooltip"
+            data-placement="left"
+            title=""
+            :data-original-title="link.name"
+          >
+            <img :src="getImageUrl(link.img)" :alt="link.name" />
+          </a>
+        </li>
+      </ul>
       <h1 class="typewriter">I'm Mohab</h1>
       <h4>
         a <span class="marker">web developer</span> with a difference. <br />I
@@ -9,12 +68,18 @@
       </h4>
       <div class="actions">
         <button class="btn btn-primary">Let's build websites</button>
-        <button class="btn btn-outline-primary">Discover My Art</button>
+        <a
+          download="Mohab Mohammed resume"
+          href="/cv.pdf"
+          class="btn btn-outline-primary"
+          >Download CV
+          <img src="@images/cv.svg" class="icon" />
+        </a>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="@/assets/images/hero1.png" alt="ME" />
+      <img src="@/assets/images/hero1.webp" alt="ME" />
     </div>
     <!-- wave shape -->
     <div class="bottom-wave">
@@ -43,31 +108,10 @@
   </section>
 </template>
 
-<script setup>
-import { onMounted } from "vue";
-import { getImageUrl } from "@/utils/imgUrl";
-onMounted(() => {
-  const img = document.querySelector("img");
-  function changeImg(src) {
-    img.setAttribute("src", getImageUrl(src));
-  }
-  img.addEventListener("mouseenter", () => {
-    changeImg("hero2.png");
-    img.classList.remove("fade-in-right");
-    img.classList.add("fade-in-left");
-  });
-  img.addEventListener("mouseleave", () => {
-    changeImg("hero1.png");
-    img.classList.remove("fade-in-left");
-    img.classList.add("fade-in-right");
-  });
-});
-</script>
-
 <style>
 .hero {
   position: relative;
-  padding-bottom: 6rem;
+  padding-block: 5rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -108,21 +152,25 @@ onMounted(() => {
   fill: #ffffff;
 }
 
+.social-links {
+  position: relative;
+  display: flex;
+  gap: 2rem;
+  justify-content: start;
+}
+.social-links::after {
+  content: "";
+  position: absolute;
+  width: 6rem;
+  border-block: 2px solid #0c79b5;
+  height: 5px;
+  right: 4rem;
+  top: 40%;
+}
 .intro {
   margin-top: 5rem;
   line-height: 1.4;
   word-spacing: 0.5rem;
-}
-.intro > h4 {
-  font-size: calc(1.2rem + 1vw);
-  font-weight: 800;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--whitesmoke);
-  text-transform: capitalize;
-}
-.marker {
-  color: var(--whitesmoke);
-  font-size: calc(1.3rem + 1vw);
 }
 .intro > h1 {
   font-size: calc(4rem + 1.5vw);
@@ -135,6 +183,17 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.intro > h4 {
+  font-size: calc(1.2rem + 1vw);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--whitesmoke);
+  text-transform: capitalize;
+}
+.marker {
+  color: var(--whitesmoke);
+  font-size: calc(1.3rem + 1vw);
+}
 
 .actions {
   margin-top: 3rem;
@@ -142,6 +201,11 @@ onMounted(() => {
   gap: 1.5rem;
 }
 
+img.icon {
+  width: 16px;
+  vertical-align: middle;
+  filter: invert(1);
+}
 .hero-image {
   position: relative;
   border-radius: 100%;
@@ -150,12 +214,39 @@ onMounted(() => {
   overflow: hidden;
 }
 
-@media (width >= 768px) {
+.social-links img {
+  width: 2rem;
+}
+@media (width > 768px) {
   .hero {
     flex-direction: row;
   }
   .hero-image {
     max-width: 25%;
+  }
+  .social-links {
+    position: fixed;
+    flex-direction: column;
+    gap: 1.5rem;
+    top: 52vh;
+    left: 6vh;
+    z-index: 1000;
+  }
+  .social-links::before,
+  .social-links::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 5px double #0c79b5;
+    height: 9rem;
+    left: 0.8rem;
+  }
+  .social-links::before {
+    top: -100%;
+  }
+  .social-links::after {
+    top: unset;
+    bottom: -100%;
   }
 }
 </style>
