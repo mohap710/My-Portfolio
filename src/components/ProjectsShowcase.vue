@@ -7,7 +7,7 @@ const { projects } = useProjectStore();
 
 <template>
   <section class="projects">
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">My Work</h2>
     <div v-for="project in projects" class="project-card">
       <div class="info">
         <h4 class="project-title">
@@ -73,7 +73,10 @@ const { projects } = useProjectStore();
   flex-wrap: wrap;
   gap: 2rem;
   min-height: 85vh;
-  margin-block-end: 5rem;
+  margin-block-end: 2rem;
+}
+.project-card:last-child {
+  margin-block-end: 0;
 }
 .project-card:nth-child(odd) {
   flex-direction: row-reverse;
@@ -187,9 +190,9 @@ span.number {
     content: "";
     display: block;
     position: absolute;
-    left: -5%;
+    left: -7%;
     height: 100%;
-    border-inline-start: 1px solid var(--rich-black);
+    border-inline-start: 5px double var(--rich-black);
     opacity: 0.5;
   }
 
