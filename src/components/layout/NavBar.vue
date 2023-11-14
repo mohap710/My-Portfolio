@@ -1,33 +1,39 @@
 <script setup>
-import { RouterLink } from "vue-router";
+// import { RouterLink } from "vue-router";
 import { onMounted } from "vue";
 const navLinks = [
-  { name: "Home", to: "home" },
-  { name: "About", to: "about" },
-  { name: "Portfolio", to: "portfolio" },
-  { name: "Testimonials", to: "testimonials" },
-  { name: "Contact", to: "contact" },
+  { name: "Home", hash: "#home" },
+  { name: "About", hash: "#about" },
+  { name: "Portfolio", hash: "#portfolio" },
+  { name: "Testimonials", hash: "#testimonials" },
+  { name: "Contact", hash: "#contact" },
 ];
 // navbar animation
+
 onMounted(() => {
   const navToggler = document.querySelector(".nav-toggler");
   const nav = document.querySelector("#main-nav");
   const header = document.querySelector("header");
+
+  function openNav() {
+    navToggler.setAttribute("aria-expanded", "true");
+    navToggler.classList.add("opened");
+    nav.setAttribute("data-visible", "true");
+    // prevent body from scrolling when menu is opened
+    // document.querySelector("body").style.overflow = "hidden";
+  }
+  function closeNav() {
+    navToggler.setAttribute("aria-expanded", "false");
+    navToggler.classList.remove("opened");
+    nav.setAttribute("data-visible", "false");
+    // document.querySelector("body").style.overflow = "scroll";
+  }
+
   navToggler.addEventListener("click", () => {
     const visibility = nav.getAttribute("data-visible");
-    if (visibility === "false") {
-      navToggler.setAttribute("aria-expanded", "true");
-      navToggler.classList.add("opened");
-      nav.setAttribute("data-visible", "true");
-      // prevent body from scrolling when menu is opened
-      // document.querySelector("body").style.overflow = "hidden";
-    } else {
-      navToggler.setAttribute("aria-expanded", "false");
-      navToggler.classList.remove("opened");
-      nav.setAttribute("data-visible", "false");
-      // document.querySelector("body").style.overflow = "scroll";
-    }
+    visibility === "false" ? openNav() : closeNav();
   });
+  // Change between transparent and colored nav
   window.addEventListener("scroll", () => {
     window.scrollY > 25
       ? header.classList.add("colored-nav")
@@ -37,7 +43,7 @@ onMounted(() => {
 </script>
 <template>
   <header>
-    <a class="logo" href="#">Mohab.</a>
+    <a class="logo" href="#"><img src="@images/favicon.png" alt="logo" /></a>
     <button class="nav-toggler" aria-expanded="false" aria-controls="main-nav">
       <span></span>
       <span></span>
@@ -46,7 +52,9 @@ onMounted(() => {
     <nav>
       <ul id="main-nav" class="nav-links" data-visible="false">
         <li class="nav-link" v-for="link in navLinks" :key="link">
-          <router-link to="/">{{ link.name }}</router-link>
+          <router-link :to="{ hash: link.hash }" :class="link.class">{{
+            link.name
+          }}</router-link>
         </li>
       </ul>
     </nav>
@@ -54,7 +62,7 @@ onMounted(() => {
 </template>
 <style scoped>
 header {
-  padding: 2rem;
+  padding: 0.5rem 1rem;
   position: fixed;
   top: 0;
   right: 0;
@@ -66,9 +74,10 @@ header {
   transition: all 300ms ease-in-out;
 }
 .logo {
-  font-size: calc(1.2rem + 1.5vw);
-  font-weight: 900;
-  color: var(--whitesmoke);
+  width: calc(2rem + 2vw);
+  filter: brightness(0) invert(1);
+  padding-block: 10px;
+  margin-inline-start: 1rem;
   z-index: 1000;
 }
 nav {
@@ -92,12 +101,11 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 2rem;
   position: fixed;
   right: 0;
   top: 0;
   bottom: 0;
-  padding-top: 3rem;
   width: 100%;
   text-align: center;
   background-color: var(--rich-black);
@@ -179,19 +187,16 @@ nav {
     display: none;
   }
   header {
-    width: 100vh;
-    height: 45px;
+    width: 100%;
+    height: 80px;
     inset: unset;
-    /* background-color: var(--whitesmoke); */
-    transform-origin: left top;
-    transform: rotate(-90deg) translateX(-100%);
   }
   .nav-links {
     position: absolute;
     padding-top: 0;
     flex-direction: row;
     top: 0;
-    right: 35vh;
+    right: 15vw;
     bottom: 0;
   }
   .nav-link > a {
