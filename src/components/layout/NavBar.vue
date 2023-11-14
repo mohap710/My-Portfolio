@@ -1,60 +1,77 @@
 <script setup>
 // import { RouterLink } from "vue-router";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+let activeLink = ref(0);
+let navToggler = ref(null);
+let nav = ref(null);
+let header = ref(null);
 const navLinks = [
-  { name: "Home", hash: "#home" },
+  { name: "Home", hash: "#home", class: "active" },
   { name: "About", hash: "#about" },
   { name: "Portfolio", hash: "#portfolio" },
   { name: "Testimonials", hash: "#testimonials" },
   { name: "Contact", hash: "#contact" },
 ];
+
+function openNav() {
+  navToggler.value.setAttribute("aria-expanded", "true");
+  navToggler.value.classList.add("opened");
+  nav.value.setAttribute("data-visible", "true");
+  // prevent body from scrolling when menu is opened
+  // document.querySelector("body").style.overflow = "hidden";
+}
+function closeNav() {
+  navToggler.value.setAttribute("aria-expanded", "false");
+  navToggler.value.classList.remove("opened");
+  nav.value.setAttribute("data-visible", "false");
+  // document.querySelector("body").style.overflow = "scroll";
+}
+function toggleNav() {
+  const visibility = nav.value.getAttribute("data-visible");
+  visibility === "false" ? openNav() : closeNav();
+}
 // navbar animation
-
 onMounted(() => {
-  const navToggler = document.querySelector(".nav-toggler");
-  const nav = document.querySelector("#main-nav");
-  const header = document.querySelector("header");
+  navToggler.value = document.querySelector(".nav-toggler");
+  nav.value = document.querySelector("#main-nav");
+  header.value = document.querySelector("header");
 
-  function openNav() {
-    navToggler.setAttribute("aria-expanded", "true");
-    navToggler.classList.add("opened");
-    nav.setAttribute("data-visible", "true");
-    // prevent body from scrolling when menu is opened
-    // document.querySelector("body").style.overflow = "hidden";
-  }
-  function closeNav() {
-    navToggler.setAttribute("aria-expanded", "false");
-    navToggler.classList.remove("opened");
-    nav.setAttribute("data-visible", "false");
-    // document.querySelector("body").style.overflow = "scroll";
-  }
-
-  navToggler.addEventListener("click", () => {
-    const visibility = nav.getAttribute("data-visible");
-    visibility === "false" ? openNav() : closeNav();
-  });
   // Change between transparent and colored nav
   window.addEventListener("scroll", () => {
     window.scrollY > 25
-      ? header.classList.add("colored-nav")
-      : header.classList.remove("colored-nav");
+      ? header.value.classList.add("colored-nav")
+      : header.value.classList.remove("colored-nav");
   });
 });
+// Change active state and close nav if opened
+function setActiveClass(index) {
+  activeLink.value = index;
+  const visibility = nav.value.getAttribute("data-visible");
+  if (visibility === "true") closeNav();
+}
 </script>
 <template>
   <header>
     <a class="logo" href="#"><img src="@images/favicon.png" alt="logo" /></a>
-    <button class="nav-toggler" aria-expanded="false" aria-controls="main-nav">
+    <button
+      class="nav-toggler"
+      @click="toggleNav"
+      aria-expanded="false"
+      aria-controls="main-nav"
+    >
       <span></span>
       <span></span>
       <span></span>
     </button>
     <nav>
       <ul id="main-nav" class="nav-links" data-visible="false">
-        <li class="nav-link" v-for="link in navLinks" :key="link">
-          <router-link :to="{ hash: link.hash }" :class="link.class">{{
-            link.name
-          }}</router-link>
+        <li class="nav-link" v-for="(link, idx) in navLinks" :key="link">
+          <a
+            :href="link.hash"
+            @click="setActiveClass(idx)"
+            :class="activeLink == idx ? 'active' : ''"
+            >{{ link.name }}</a
+          >
         </li>
       </ul>
     </nav>
@@ -204,5 +221,11 @@ nav {
     -webkit-text-stroke: unset;
     color: var(--whitesmoke);
   }
+}
+.active {
+  color: var(--soft-blue) !important;
+}
+.active::after {
+  width: 100% !important;
 }
 </style>
