@@ -10,7 +10,7 @@ export const useProjectStore = defineStore("projects", () => {
 			role: "Full-stack developer",
 			stack: ["vuejs", "nodejs", "graphql", "sequelize", "mysql"],
 			liveLink: "https://sayidnafsak.com/",
-			screenshots: [imgPath + "SN1.png", imgPath + "SN2.png", imgPath + "SN3.png"]
+			screenshots: [imgPath + "SN1.webp", imgPath + "SN2.webp", imgPath + "SN3.webp", imgPath + "SN4.webp", imgPath + "SN5.webp"]
 
 
 		},
@@ -21,17 +21,17 @@ export const useProjectStore = defineStore("projects", () => {
 			role: "Full-stack developer",
 			stack: ["mysql", "expressjs", "nodejs"],
 			liveLink: "https://afro-tech.net",
-			screenshots: [imgPath + "afro-tech1.png", imgPath + "afro-tech2.png", imgPath + "afro-tech3.png"]
+			screenshots: [imgPath + "afro-tech1.webp", imgPath + "afro-tech2.webp", imgPath + "afro-tech3.webp", imgPath + "afro-tech4.webp"]
 		},
 
 		{
 			id: 3,
 			title: "online-edu",
-			summary: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia explicabo molestiae dolorum a vitae quo voluptates velit corporis sapiente facere magni itaque eius, atque quasi aspernatur repellendus accusantium dicta quisquam, ullam, culpa eveniet amet quidem doloremque voluptatem. Quisquam veritatis nam adipisci recusandae a reprehenderit aspernatur.`,
+			summary: `As part of a comprehensive full-stack web development course, I undertook the task of creating a responsive e-learning platform to apply and evaluate the acquired knowledge and skills.`,
 			role: "Frontend developer",
 			stack: ["html", "css", "javascript"],
 			liveLink: "https://mohap710.github.io/online-edu",
-			screenshots: [imgPath + "online-edu1.png", imgPath + "online-edu2.png", imgPath + "online-edu3.png"]
+			screenshots: [imgPath + "online-edu1.webp", imgPath + "online-edu2.webp", imgPath + "online-edu3.webp", imgPath + "online-edu4.webp"]
 
 
 		},
@@ -42,7 +42,7 @@ export const useProjectStore = defineStore("projects", () => {
 			role: "Frontend developer",
 			stack: ["html", "css"],
 			liveLink: "https://www.frontendmentor.io/profile/mohap710",
-			screenshots: [imgPath + "chat-app.png", imgPath + "fylo.png", imgPath + "data-storage.png", imgPath + "social-proof.png", imgPath + "testimonial-grid.png"]
+			screenshots: [imgPath + "chat-app.webp", imgPath + "fylo.webp", imgPath + "data-storage.webp", imgPath + "social-proof.webp", imgPath + "testimonial-grid.webp"]
 
 
 		}
