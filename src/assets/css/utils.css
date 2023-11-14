@@ -24,6 +24,7 @@
 
 .btn {
   cursor: pointer;
+  width: max-content;
   position: relative;
   font-size: 1rem;
   font-weight: 800;
