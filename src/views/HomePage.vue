@@ -9,11 +9,11 @@ const { testimonials } = useTestimonialStore();
 import { Autoplay } from "swiper/modules";
 </script>
 <template>
-  <HeroSection />
-  <AboutSection />
-  <ProjectsShowcase />
-  <section class="testimonials">
-    <h2 class="section-title">What people say about me</h2>
+  <HeroSection id="home" />
+  <ProjectsShowcase id="portfolio" />
+  <AboutSection id="about" />
+  <section class="testimonials" id="testimonials">
+    <h2 class="section-title">What they say</h2>
 
     <swiper-container
       :modules="[Autoplay]"
@@ -51,6 +51,8 @@ swiper-container {
 
 .testimonials {
   color: var(--rich-black);
-  /* background-color: var(--rich-black); */
+  background-image: url(../assets/images/dddepth.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
 }
 </style>
