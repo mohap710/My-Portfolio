@@ -90,7 +90,7 @@ const props = defineProps({
   width: 50px;
   aspect-ratio: 1;
   border-top-right-radius: 50px;
-  box-shadow: 15px -15px 0 15px white;
+  box-shadow: 15px -15px 0 13px white;
   background-color: transparent;
 }
 .avatar::after {
