@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection.vue";
 import AboutSection from "@/components/AboutSection.vue";
 import TestimonialCard from "@/components/TestimonialCard.vue";
 import ProjectsShowcase from "@/components/ProjectsShowcase.vue";
+import ContactForm from "@/components/ContactForm.vue";
 import { useTestimonialStore } from "../stores/testimonials";
 const { testimonials } = useTestimonialStore();
 import { Autoplay } from "swiper/modules";
@@ -16,6 +17,8 @@ import { Autoplay } from "swiper/modules";
     <h2 class="section-title">What they say</h2>
     <div class="testimonials-container">
       <swiper-container
+        :modules="[Autoplay]"
+        autoplay-delay="5000"
         speed="1000"
         loop="true"
         :breakpoints="{
@@ -41,6 +44,7 @@ import { Autoplay } from "swiper/modules";
       </swiper-container>
     </div>
   </section>
+  <ContactForm id="contact" />
 </template>
 
 <style scoped>
@@ -50,8 +54,8 @@ swiper-container {
 
 .testimonials {
   color: var(--rich-black);
-  background-image: url(../assets/images/dddepth.png);
+  /* background-image: url(../assets/images/dddepth.png);
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: bottom right; */
 }
 </style>
