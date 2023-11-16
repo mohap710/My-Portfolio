@@ -73,6 +73,14 @@ function setActiveClass(index) {
             >{{ link.name }}</a
           >
         </li>
+        <li class="cv">
+          <a
+            download="Mohab _Mohammed_Resume"
+            href="cv.pdf"
+            class="btn btn-primary"
+            >Download CV
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -98,6 +106,7 @@ header {
   z-index: 1000;
 }
 nav {
+  display: flex;
   position: absolute;
   right: 2rem;
 }
@@ -133,8 +142,7 @@ nav {
 .nav-link > a {
   font-size: 6vh;
   text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 2px #ececee;
+  color: var(--whitesmoke);
   line-height: 1.3;
   font-weight: 800;
   display: inline-block;
@@ -203,12 +211,11 @@ nav {
     inset: unset;
   }
   .nav-links {
-    position: absolute;
+    position: static;
     padding-top: 0;
     flex-direction: row;
-    top: 0;
-    right: 15vw;
-    bottom: 0;
+    transform: none;
+    background: transparent;
   }
   .nav-link > a {
     font-size: 1.2rem;
