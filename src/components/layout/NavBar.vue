@@ -104,13 +104,7 @@ nav {
 .colored-nav {
   background-color: var(--rich-black);
   background-size: 300% 300%;
-  background-image: radial-gradient(
-      at 0% 0%,
-      hsla(204, 48%, 45%, 0.64) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 5%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
-    radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
+  background-image: var(--gradient);
 }
 
 .nav-links {
@@ -199,7 +193,7 @@ nav {
   bottom: 10px;
 }
 /* Desktop version */
-@media (width>800px) {
+@media (width>991px) {
   .nav-toggler {
     display: none;
   }

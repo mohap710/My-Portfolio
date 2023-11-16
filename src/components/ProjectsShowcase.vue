@@ -159,6 +159,7 @@ span.number {
 }
 .mockup {
   max-width: 500px;
+  width: calc(100vw - 3rem);
 }
 .row {
   flex-direction: row;
@@ -175,8 +176,8 @@ span.number {
 
 @media (width > 800px) {
   .info {
-    padding: 2rem 5rem;
-    max-width: 50%;
+    padding: 2rem 4rem;
+    max-width: 65%;
   }
   /* .project-card{
     margin-bottom: 10rem;

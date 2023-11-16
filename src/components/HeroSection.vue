@@ -70,7 +70,7 @@ onMounted(() => {
         <button class="btn btn-primary">Let's build websites</button>
         <a
           download="Mohab Mohammed resume"
-          href="/cv.pdf"
+          href="cv.pdf"
           class="btn btn-outline-primary"
           >Download CV
           <img src="@images/cv.svg" class="icon" />
@@ -79,7 +79,7 @@ onMounted(() => {
     </div>
 
     <div class="hero-image">
-      <img src="@/assets/images/hero1.webp" alt="ME" />
+      <img src="@/assets/images/hero1.webp" loading="lazy" alt="ME" />
     </div>
     <!-- wave shape -->
     <div class="bottom-wave">
@@ -120,13 +120,7 @@ onMounted(() => {
   color: var(--whitesmoke);
   background-color: var(--rich-black);
   background-size: 300% 300%;
-  background-image: radial-gradient(
-      at 0% 0%,
-      hsla(204, 48%, 45%, 0.64) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 5%, hsla(217, 91%, 31%, 0.74) 0px, transparent 50%),
-    radial-gradient(at 82% 99%, hsla(213, 100%, 50%, 0.41) 0px, transparent 50%);
+  background-image: var(--gradient);
   transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
   /* animation: gradient-wave ease 10s infinite; */
 }

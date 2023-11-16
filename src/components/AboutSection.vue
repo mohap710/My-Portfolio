@@ -39,7 +39,7 @@ import SkillsGrid from "./SkillsGrid.vue";
   max-width: 300px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 991px) {
   .about-me {
     flex-direction: row;
   }

@@ -59,15 +59,12 @@ main {
   flex-direction: column;
 }
 section {
-  min-height: 100vh;
+  min-height: max-content;
   padding: 2rem 1.5rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 991px) {
   section {
-    padding: 3rem 5rem;
-  }
-  .about-me {
-    flex-direction: row;
+    padding: 1rem 5rem;
   }
 }

@@ -14,33 +14,32 @@ import { Autoplay } from "swiper/modules";
   <AboutSection id="about" />
   <section class="testimonials" id="testimonials">
     <h2 class="section-title">What they say</h2>
-
-    <swiper-container
-      :modules="[Autoplay]"
-      autoplay-delay="3000"
-      speed="1000"
-      loop="true"
-      :breakpoints="{
-        1024: {
-          slidesPerView: 3,
-        },
-        800: {
-          slidesPerView: 2,
-        },
-        600: {
-          slidesPerView: 1,
-        },
-      }"
-    >
-      <swiper-slide v-for="testimonial in testimonials" :key="testimonial.id">
-        <TestimonialCard
-          :name="testimonial.name"
-          :quote="testimonial.quote"
-          :role="testimonial.role"
-          :img="getImageUrl(testimonial.img)"
-        />
-      </swiper-slide>
-    </swiper-container>
+    <div class="testimonials-container">
+      <swiper-container
+        speed="1000"
+        loop="true"
+        :breakpoints="{
+          1024: {
+            slidesPerView: 3,
+          },
+          991: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 1,
+          },
+        }"
+      >
+        <swiper-slide v-for="testimonial in testimonials" :key="testimonial.id">
+          <TestimonialCard
+            :name="testimonial.name"
+            :quote="testimonial.quote"
+            :role="testimonial.role"
+            :img="getImageUrl(testimonial.img)"
+          />
+        </swiper-slide>
+      </swiper-container>
+    </div>
   </section>
 </template>
 
