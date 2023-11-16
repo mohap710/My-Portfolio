@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Overlock:wght@400;700;900&display=swap");
 @font-face {
   font-family: "Patrick Hand";
   src: url("../fonts/PatrickHand-Regular.ttf");
@@ -9,8 +10,7 @@
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: "League Spartan", sans-serif;
-  font-family: "Patrick Hand", cursive;
+  font-family: "Overlock", sans-serif;
   font-weight: normal;
 }
 html,
