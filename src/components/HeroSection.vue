@@ -66,7 +66,7 @@ onMounted(() => {
         don't just <span class="marker">build</span> websites,<br />
         I build <span class="marker">relationships.</span>
       </h4>
-      <div class="actions">
+      <div class="cta">
         <a href="#contact" class="btn btn-primary"> Let's build websites </a>
         <a
           download="Mohab_Mohammed_Resume"
@@ -187,7 +187,7 @@ onMounted(() => {
   font-weight: 800;
 }
 
-.actions {
+.cta {
   margin-top: 3rem;
   display: flex;
   gap: 1.5rem;
