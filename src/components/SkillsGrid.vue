@@ -27,7 +27,11 @@ const skills = [
       v-for="skill in skills"
       :key="skill"
     >
-      <img :src="getImageUrl(`stack/${skill}.png`)" :alt="skill" />
+      <img
+        loading="lazy"
+        :src="getImageUrl(`stack/${skill}.png`)"
+        :alt="skill"
+      />
     </div>
   </div>
 </template>
