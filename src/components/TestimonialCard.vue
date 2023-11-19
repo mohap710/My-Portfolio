@@ -37,7 +37,7 @@ const props = defineProps({
 <style scoped>
 .testimonial-card {
   position: relative;
-  max-width: 300px;
+  max-width: 330px;
   min-height: 400px;
   padding: 2rem;
   margin: 1rem auto;
@@ -115,9 +115,14 @@ const props = defineProps({
   overflow: hidden;
 }
 .content {
-  margin-top: 50%;
+  margin-top: 40%;
+}
+.name,
+.role {
+  font-weight: 700;
 }
 q {
+  display: block;
   font-weight: 900;
   margin-top: 0.5rem;
   text-align: justify;

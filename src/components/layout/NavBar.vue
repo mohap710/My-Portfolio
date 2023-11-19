@@ -131,8 +131,8 @@ nav {
   background-color: var(--rich-black);
   background-size: 300% 300%;
   background-image: var(--gradient);
-  transform: translateX(100%);
-  transition: transform 350ms ease-out;
+  transform: translateX(150%);
+  transition: transform 250ms ease-in-out;
 }
 
 .nav-links[data-visible="true"] {
