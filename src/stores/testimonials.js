@@ -18,7 +18,7 @@ export const useTestimonialStore = defineStore("testimonials", () => {
 		{
 			id: 3,
 			name: "Arwa Hassan Albeely",
-			quote: `Mohab is a very smart developer , easy going he understands exactly your needs and applies it perfectly; he's a great, ambitious, patient and good at his job, I'd love to work with him again, and I highly recommend him for your projects he knows exactly what he's doing.`,
+			quote: `Mohab is a very smart developer, easy going he understands exactly your needs and applies it perfectly; he's a great, ambitious, patient and good at his job, I'd love to work with him again, and I highly recommend him for your projects he knows exactly what he's doing.`,
 			role: "Founder & CEO Of Sayed Nafsak ",
 			img: "testimonial/arwa.jpeg",
 		},
