@@ -14,19 +14,32 @@ import SkillsGrid from "./SkillsGrid.vue";
         for positive impact, I'm dedicated to making a meaningful difference in
         the world.
       </p>
-      <!-- <img src="@images/aboutMe.svg" alt="" /> -->
+      <img src="@images/aboutMe.svg" alt="" />
+    </div>
+    <div class="skills">
+      <h2 class="title">Domain of expertise</h2>
       <SkillsGrid />
     </div>
   </section>
 </template>
 
 <style scoped>
-.about-me {
+.about-me,
+.skills {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2rem 10rem;
   align-items: center;
+  margin-block: 5rem;
+}
+.skills {
+  column-gap: 15rem;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark-blue);
 }
 .about-me p {
   font-size: 1.4rem;
@@ -41,6 +54,9 @@ import SkillsGrid from "./SkillsGrid.vue";
 
 @media (min-width: 991px) {
   .about-me {
+    flex-direction: row-reverse;
+  }
+  .skills {
     flex-direction: row;
   }
 }
