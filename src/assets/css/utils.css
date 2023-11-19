@@ -23,11 +23,12 @@
 }
 
 .btn {
+  display: flex;
   cursor: pointer;
   width: max-content;
   position: relative;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 900;
   color: var(--whitesmoke);
   padding: 0.8rem 1.5rem;
   border: transparent;
@@ -75,7 +76,6 @@
 .btn-primary {
   background: linear-gradient(to left, var(--soft-blue), var(--light-blue));
   border: 1px solid var(--light-blue);
-  overflow: hidden;
 }
 
 .btn-primary::after {
@@ -89,14 +89,6 @@
   border: 1px solid var(--light-blue);
   will-change: transform;
 }
-
-/* .btn-primary {
-  background: linear-gradient(to left, var(--soft-blue), var(--light-blue));
-}
-
-.btn-primary:hover {
-  transform: translateY(-5px);
-} */
 
 /* Margins and paddings */
 .m-0 {
