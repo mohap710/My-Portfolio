@@ -860,7 +860,7 @@ async function sendMail() {
               color="#f1edee"
               style="margin: auto"
             />
-            <span v-else> Send message </span>
+            <span class="btn-text" v-else> Send message </span>
           </button>
         </div>
       </form>
@@ -940,12 +940,12 @@ form {
   align-items: center;
   min-width: 25rem;
   padding: 1rem;
+  gap: 1rem;
 }
 label {
   display: block;
   font-size: 1.2rem;
   font-weight: 800;
-  margin-block-start: 1rem;
 }
 input,
 textarea {
@@ -972,7 +972,7 @@ input:user-invalid {
   padding: 0.5rem 1rem;
 }
 
-.form-control::focus {
+input:focus {
   background-color: #f2f6f8;
   border: none;
   box-shadow: 0px 7px 5px rgba(87, 10, 10, 0.11);
@@ -990,8 +990,8 @@ input:user-invalid {
   left: 0;
 }
 
-.btn-primary {
-  align-items: center;
+.btn-text {
+  font-weight: 900;
 }
 @media (min-width: 991px) {
   .container {

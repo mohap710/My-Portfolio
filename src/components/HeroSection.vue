@@ -67,13 +67,12 @@ onMounted(() => {
         I build <span class="marker">relationships.</span>
       </h4>
       <div class="actions">
-        <button class="btn btn-primary">Let's build websites</button>
+        <a href="#contact" class="btn btn-primary"> Let's build websites </a>
         <a
-          download="Mohab Mohammed resume"
+          download="Mohab_Mohammed_Resume"
           href="cv.pdf"
           class="btn btn-outline-primary"
           >Download CV
-          <img src="@images/cv.svg" class="icon" />
         </a>
       </div>
     </div>
@@ -108,7 +107,7 @@ onMounted(() => {
   </section>
 </template>
 
-<style>
+<style scoped>
 .hero {
   position: relative;
   padding-block: 5rem;
@@ -122,7 +121,6 @@ onMounted(() => {
   background-size: 300% 300%;
   background-image: var(--gradient);
   transition: all cubic-bezier(0.215, 0.61, 0.355, 1) 1s;
-  /* animation: gradient-wave ease 10s infinite; */
 }
 
 .bottom-wave {
@@ -164,7 +162,7 @@ onMounted(() => {
 .intro {
   margin-top: 5rem;
   line-height: 1.4;
-  word-spacing: 0.5rem;
+  /* word-spacing: 0.5rem; */
 }
 .intro > h1 {
   font-size: calc(4rem + 1.5vw);
@@ -178,15 +176,15 @@ onMounted(() => {
   -webkit-text-fill-color: transparent;
 }
 .intro > h4 {
-  font-size: calc(1.2rem + 1vw);
-  font-weight: 800;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--whitesmoke);
+  font-size: calc(1rem + 1vw);
+  font-weight: 700;
+  color: var(--whitesmoke);
   text-transform: capitalize;
 }
 .marker {
-  color: var(--whitesmoke);
+  color: var(--soft-blue);
   font-size: calc(1.3rem + 1vw);
+  font-weight: 800;
 }
 
 .actions {
@@ -195,11 +193,11 @@ onMounted(() => {
   gap: 1.5rem;
 }
 
-img.icon {
+/* img.icon {
   width: 16px;
   vertical-align: middle;
   filter: invert(1);
-}
+} */
 .hero-image {
   position: relative;
   border-radius: 100%;
