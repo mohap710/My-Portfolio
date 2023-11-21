@@ -1,83 +1,88 @@
 <script setup>
-import { getImageUrl } from "../utils/imgUrl";
-import { useTestimonialStore } from "../stores/testimonials";
+import { defineAsyncComponent, defineEmits, onMounted } from "vue";
+
+// Skeletons Components
+import ProjectCardSkeleton from "@/components/skeleton/ProjectCardSkeleton.vue";
+import HeroSectionSkeleton from "@/components/skeleton/HeroSectionSkeleton.vue";
+import AboutSectionSkeleton from "@/components/skeleton/AboutSectionSkeleton.vue";
+import TestimonialCardSkeleton from "@/components/skeleton/TestimonialCardSkeleton.vue";
+// Async Components
+const emits = defineEmits(["loaded"]);
+onMounted(() => {
+  console.log("mounted");
+  emits("loaded");
+});
 
 const HeroSection = defineAsyncComponent(() =>
   import("@/components/HeroSection.vue")
 );
+const ProjectsShowcase = defineAsyncComponent(() =>
+  import("@/components/ProjectsShowcase.vue")
+);
 const AboutSection = defineAsyncComponent(() =>
   import("@/components/AboutSection.vue")
 );
-const TestimonialCard = defineAsyncComponent(() =>
-  import("@/components/TestimonialCard.vue")
+
+const TestimonialSection = defineAsyncComponent(() =>
+  import("@/components/TestimonialSection.vue")
 );
 
 const ContactForm = defineAsyncComponent(() =>
   import("@/components/ContactForm.vue")
 );
-const ProjectCardSkeleton = defineAsyncComponent(() =>
-  import("@/components/skeleton/ProjectCardSkeleton.vue")
-);
-const ProjectsShowcase = defineAsyncComponent({
-  loader: () => import("@/components/ProjectsShowcase.vue"),
-  loadingComponent: ProjectCardSkeleton,
-});
-const { testimonials } = useTestimonialStore();
-import { Autoplay } from "swiper/modules";
-import { defineAsyncComponent } from "vue";
 </script>
 <template>
-  <HeroSection id="home" />
+  <!-- Hero Section -->
   <Suspense>
-    <ProjectsShowcase v-cloak id="portfolio" />
+    <HeroSection id="home" />
     <template #fallback>
-      <ProjectCardSkeleton />
+      <HeroSectionSkeleton />
     </template>
   </Suspense>
-  <AboutSection id="about" />
-  <section class="testimonials" id="testimonials">
-    <h2 class="section-title">What they say</h2>
-    <div class="testimonials-container">
-      <swiper-container
-        :modules="[Autoplay]"
-        autoplay-delay="5000"
-        speed="1000"
-        loop="true"
-        :breakpoints="{
-          1024: {
-            slidesPerView: 3,
-          },
-          991: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 1,
-          },
-        }"
-      >
-        <swiper-slide v-for="testimonial in testimonials" :key="testimonial.id">
-          <TestimonialCard
-            :name="testimonial.name"
-            :quote="testimonial.quote"
-            :role="testimonial.role"
-            :img="getImageUrl(testimonial.img)"
-          />
-        </swiper-slide>
-      </swiper-container>
-    </div>
-  </section>
+
+  <!-- Portfolio -->
+  <Suspense>
+    <ProjectsShowcase id="portfolio" />
+    <template #fallback>
+      <ProjectCardSkeleton v-for="_ in Array(2)" />
+    </template>
+  </Suspense>
+
+  <!-- About Section -->
+  <Suspense>
+    <AboutSection id="about" />
+    <template #fallback>
+      <AboutSectionSkeleton />
+    </template>
+  </Suspense>
+
+  <!-- Testimonials -->
+  <Suspense>
+    <TestimonialSection />
+    <template #fallback>
+      <div class="testimonials-container">
+        <swiper-container
+          :breakpoints="{
+            1024: {
+              slidesPerView: 3,
+            },
+            991: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 1,
+            },
+          }"
+        >
+          <swiper-slide v-for="_ in Array(3)">
+            <TestimonialCardSkeleton />
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </template>
+  </Suspense>
+  <!-- Contact -->
   <ContactForm id="contact" />
 </template>
 
-<style scoped>
-swiper-container {
-  padding: 1rem;
-}
-
-.testimonials {
-  color: var(--rich-black);
-  /* background-image: url(../assets/images/dddepth.png);
-  background-repeat: no-repeat;
-  background-position: bottom right; */
-}
-</style>
+<style scoped></style>
