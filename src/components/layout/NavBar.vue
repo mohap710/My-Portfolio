@@ -140,7 +140,7 @@ nav {
 }
 
 .nav-link > a {
-  font-size: 6vh;
+  font-size: 4vh;
   text-transform: uppercase;
   color: var(--whitesmoke);
   line-height: 1.3;

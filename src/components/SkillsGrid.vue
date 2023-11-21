@@ -28,6 +28,7 @@ const skills = [
       :key="skill"
     >
       <img
+        class="skill-icon"
         loading="lazy"
         :src="getImageUrl(`stack/${skill}.png`)"
         :alt="skill"
@@ -36,7 +37,7 @@ const skills = [
   </div>
 </template>
 
-<style scoped>
+<style>
 .skills-container {
   margin-block: 2rem;
   perspective: 600px;
@@ -59,7 +60,7 @@ const skills = [
 .skill:hover {
   filter: none;
 }
-img {
+.skill-icon {
   padding: 10px;
   rotate: -45deg;
   vertical-align: center;

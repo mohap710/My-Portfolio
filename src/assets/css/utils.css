@@ -25,6 +25,7 @@
 .btn {
   display: flex;
   cursor: pointer;
+  min-width: 2.5rem;
   width: max-content;
   position: relative;
   font-size: 1rem;

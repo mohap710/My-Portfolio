@@ -20,7 +20,6 @@ const props = defineProps({
 </script>
 <template>
   <div class="testimonial-card">
-    <div class="media"></div>
     <div class="avatar">
       <div class="img-wrapper">
         <img :src="img" alt="" />
@@ -34,7 +33,7 @@ const props = defineProps({
   </div>
 </template>
 
-<style scoped>
+<style>
 .testimonial-card {
   position: relative;
   max-width: 330px;
@@ -121,6 +120,7 @@ const props = defineProps({
 .role {
   font-weight: 700;
 }
+
 q {
   display: block;
   font-weight: 900;

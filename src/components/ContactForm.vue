@@ -990,9 +990,6 @@ input:focus {
   left: 0;
 }
 
-.btn-text {
-  font-weight: 900;
-}
 @media (min-width: 991px) {
   .container {
     flex-direction: row;

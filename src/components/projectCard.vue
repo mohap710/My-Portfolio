@@ -1,14 +1,13 @@
 <script setup>
 import { EffectFlip, Autoplay } from "swiper/modules";
 import { getImageUrl } from "../utils/imgUrl";
+import timeoutDelay from "../utils/timeoutDelay";
 const props = defineProps({
   project: {
     type: Object,
   },
 });
-await new Promise((res) => {
-  res(props.project);
-}, 3000);
+await timeoutDelay(3000);
 </script>
 
 <template>
@@ -83,7 +82,7 @@ await new Promise((res) => {
   flex-wrap: wrap;
   gap: 2rem;
   min-height: 70vh;
-  margin-block-end: 2rem;
+  margin-block: 2rem;
 }
 .project-card:last-child {
   margin-block-end: 0;
@@ -143,7 +142,7 @@ span.number {
 .btn-github {
   position: relative;
   color: var(--rich-black);
-  font-weight: 800;
+  font-weight: 900;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -157,10 +156,11 @@ span.number {
 .btn-github::after {
   content: "";
   display: block;
-  width: 30px;
+  width: 32px;
   aspect-ratio: 1;
-  margin-inline: 5px;
   background-image: url("../assets/images/github.svg");
+  background-size: contain;
+  filter: brightness(0);
 }
 .btn-github:hover::after {
   filter: brightness(0) invert(1);
