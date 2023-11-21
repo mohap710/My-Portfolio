@@ -10,8 +10,9 @@ import AnimatedPlaceholder from "./AnimatedPlaceholder.vue";
       <div class="summary">
         <p class="summary-placeholder">
           <AnimatedPlaceholder width="25ch" height="1ch" />
-          <AnimatedPlaceholder width="30ch" height="1ch" />
           <AnimatedPlaceholder width="15ch" height="1ch" />
+          <AnimatedPlaceholder width="25ch" height="1ch" />
+          <AnimatedPlaceholder width="30ch" height="1ch" />
         </p>
         <div class="tech-info">
           <div class="role">
