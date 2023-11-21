@@ -1,6 +1,8 @@
 <script setup>
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
+import { FingerprintSpinner } from "epic-spinners";
 import { getImageUrl } from "@/utils/imgUrl";
+import timeoutDelay from "@/utils/timeoutDelay";
 const socialLinks = [
   {
     name: "GitHub",
@@ -18,22 +20,33 @@ const socialLinks = [
     img: "email.svg",
   },
 ];
+let loading = ref(false);
+function downloadCV() {
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 1500);
+}
+await timeoutDelay(2500);
 onMounted(() => {
   // animate hero image
+
   const img = document.querySelector(".hero-image > img");
+  const imgWrapper = document.querySelector(".hero-image");
   function changeImg(src) {
     img.setAttribute("src", getImageUrl(src));
   }
-  img.addEventListener("mouseenter", () => {
-    changeImg("hero2.webp");
+  imgWrapper.addEventListener("mouseenter", () => {
+    changeImg("hero2.png");
     img.classList.remove("fade-in-right");
     img.classList.add("fade-in-left");
   });
-  img.addEventListener("mouseleave", () => {
-    changeImg("hero1.webp");
+  imgWrapper.addEventListener("mouseleave", () => {
+    changeImg("hero1.png");
     img.classList.remove("fade-in-left");
     img.classList.add("fade-in-right");
   });
+
   // Change social links colors
   const linksContainer = document.querySelector(".social-links");
   window.addEventListener("scroll", () => {
@@ -56,12 +69,12 @@ onMounted(() => {
             title=""
             :data-original-title="link.name"
           >
-            <img :src="getImageUrl(link.img)" :alt="link.name" />
+            <img class="icon" :src="getImageUrl(link.img)" :alt="link.name" />
           </a>
         </li>
       </ul>
-      <h1 class="typewriter">I'm Mohab</h1>
-      <h4>
+      <h1 class="typewriter title">I'm Mohab</h1>
+      <h4 class="slogan">
         a <span class="marker">web developer</span> with a difference. <br />I
         don't just <span class="marker">build</span> websites,<br />
         I build <span class="marker">relationships.</span>
@@ -69,16 +82,25 @@ onMounted(() => {
       <div class="cta">
         <a href="#contact" class="btn btn-primary"> Let's build websites </a>
         <a
+          @click="downloadCV"
           download="Mohab_Mohammed_Resume"
           href="cv.pdf"
           class="btn btn-outline-primary"
-          >Download CV
+        >
+          <fingerprint-spinner
+            v-if="loading"
+            :animation-duration="1500"
+            :size="32"
+            color="#f1edee"
+            style="margin: auto"
+          />
+          <span v-else class="btn-text">Download CV</span>
         </a>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="@/assets/images/hero1.webp" loading="lazy" alt="ME" />
+      <img src="@/assets/images/hero1.png" loading="lazy" alt="ME" />
     </div>
     <!-- wave shape -->
     <div class="bottom-wave">
@@ -107,7 +129,7 @@ onMounted(() => {
   </section>
 </template>
 
-<style scoped>
+<style>
 .hero {
   position: relative;
   padding-block: 5rem;
@@ -164,7 +186,7 @@ onMounted(() => {
   line-height: 1.4;
   /* word-spacing: 0.5rem; */
 }
-.intro > h1 {
+.title {
   font-size: calc(4rem + 1.5vw);
   font-weight: 900;
   text-transform: uppercase;
@@ -175,7 +197,7 @@ onMounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.intro > h4 {
+.slogan {
   font-size: calc(1rem + 1vw);
   font-weight: 700;
   color: var(--whitesmoke);
@@ -193,20 +215,20 @@ onMounted(() => {
   gap: 1.5rem;
 }
 
-/* img.icon {
-  width: 16px;
-  vertical-align: middle;
-  filter: invert(1);
-} */
 .hero-image {
   position: relative;
   border-radius: 100%;
-  width: 50%;
+  width: 65%;
+  object-fit: cover;
   transform: rotateY(180deg);
+  margin-block: 2rem;
   overflow: hidden;
 }
+.hero-image:hover {
+  cursor: url("../assets/images/me.png");
+}
 
-.social-links img {
+.social-links .icon {
   width: 2rem;
 }
 @media (width > 768px) {
