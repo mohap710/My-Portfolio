@@ -6,7 +6,7 @@ export const useTestimonialStore = defineStore("testimonials", () => {
 			name: "Mutwakil Mohamed Kakoum",
 			quote: `Mohab is a great full stack developer, I have worked with him in serveral projects and he was an example of dedication and passion, with strong ability to solve problems.`,
 			role: "Founder of Digital Valley Technology",
-			img: "testimonial/mutwakil.jpeg",
+			img: "testimonial/mutwakil.jpg",
 		},
 		{
 			id: 2,
@@ -20,14 +20,21 @@ export const useTestimonialStore = defineStore("testimonials", () => {
 			name: "Arwa Hassan Albeely",
 			quote: `Mohab is a very smart developer, easy going he understands exactly your needs and applies it perfectly; he's a great, ambitious, patient and good at his job, I'd love to work with him again, and I highly recommend him for your projects he knows exactly what he's doing.`,
 			role: "Founder & CEO Of Sayed Nafsak ",
-			img: "testimonial/arwa.jpeg",
+			img: "testimonial/arwa.jpg",
 		},
 		{
 			id: 4,
 			name: "Mohammed Zahir",
 			quote: "I strongly recommend Mohab Mohammed, he is very experienced, have good knowledge on web development using various technologies , also good problem solving mentality",
 			role: "E-commerce Specialist",
-			img: "testimonial/zahir.jpeg",
+			img: "testimonial/zahir.jpg",
+		},
+		{
+			id: 5,
+			name: "Momin Nurain",
+			quote: "Mohab is a stellar full stack web developer, renowned for his ingenious problem-solving and clear communication skills in navigating complex challenges. Mohab's not just a skilled developer but also a supportive and approachable team member who consistently goes above and beyond.",
+			role: "Flutter Developer",
+			img: "testimonial/momen.jpeg",
 		}
 	];
 	return { testimonials }

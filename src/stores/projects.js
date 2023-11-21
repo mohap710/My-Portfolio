@@ -42,6 +42,7 @@ export const useProjectStore = defineStore("projects", () => {
 			role: "Frontend Developer",
 			stack: ["html", "css", "javascript"],
 			liveLink: "https://mohap710.github.io/online-edu",
+			githubLink: "https://github.com/mohap710/online-edu",
 			screenshots: [{ desktop: "online-edu/1.webp" },
 			{ desktop: "online-edu/2.webp" },
 			{ desktop: "online-edu/3.webp" },
