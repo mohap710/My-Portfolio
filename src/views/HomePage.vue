@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent, defineEmits, onMounted } from "vue";
+import { defineAsyncComponent, onMounted } from "vue";
 
 // Skeletons Components
 import ProjectCardSkeleton from "@/components/skeleton/ProjectCardSkeleton.vue";
