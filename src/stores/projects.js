@@ -5,7 +5,7 @@ export const useProjectStore = defineStore("projects", () => {
 		{
 			id: 1,
 			title: "Sayed Nafsak",
-			summary: `Sayed Nafsak is an online social platform that facilitates direct communication and collaboration between freelancers and clients. It aims to increase the visibility and accessibility of the online workforce, and to enable skilled individuals to monetize their skills and expertise.`,
+			summary: `Sayed Nafsak is an innovative online platform that revolutionizes the way freelancers and clients connect and collaborate. It provides a seamless and secure environment for skilled individuals to showcase their talents, connect with potential clients, and turn their expertise into profitable ventures. By bridging the gap between freelancers and clients, Sayed Nafsak fosters a thriving ecosystem that empowers individuals to pursue their passions and achieve financial success.`,
 			role: "Full-stack Developer",
 			stack: ["vuejs", "nodejs", "graphql", "sequelize", "mysql"],
 			liveLink: "https://sayidnafsak.com/",
@@ -33,10 +33,24 @@ export const useProjectStore = defineStore("projects", () => {
 				{ desktop: "afro-tech/4.webp" }
 			]
 		},
-
-
 		{
 			id: 3,
+			title: "Salalah è stupenda",
+			summary: `Imagine embarking on a journey to unveil the hidden treasures of Salalah, Oman's emerald oasis. Now, imagine bringing that journey to life in both English and Italian, inviting the world to discover its magic. This was the challenge I embraced in building the website for Wonderfull Salalah, a passionate tour operator.`,
+			role: "Frontend Developer",
+			stack: ["html", "css", "javascript"],
+			liveLink: "https://mohap710.github.io/Salalah-e-Stupenda/",
+			githubLink: "https://github.com/mohap710/Salalah-e-Stupenda",
+			screenshots: [
+				{ desktop: "salalah/1.png" },
+				{ desktop: "salalah/2.png" },
+				{ desktop: "salalah/3.png" },
+			]
+
+
+		},
+		{
+			id: 4,
 			title: "online-edu",
 			summary: `As part of a comprehensive full-stack web development course, I undertook the task of creating a responsive e-learning platform to apply and evaluate the acquired knowledge and skills.`,
 			role: "Frontend Developer",
@@ -51,7 +65,7 @@ export const useProjectStore = defineStore("projects", () => {
 
 		},
 		{
-			id: 4,
+			id: 5,
 			title: "FrontendMentor Challenges",
 			summary: `Frontend Mentor is a website that provides front-end coding challenges using a real-life workflow. It allows you to improve your HTML, CSS, and JavaScript skills by building real-world projects.`,
 			role: "Frontend Developer",
@@ -62,6 +76,7 @@ export const useProjectStore = defineStore("projects", () => {
 			{ desktop: "frontend-mentor/data-storage.png" },
 			{ desktop: "frontend-mentor/social-proof.png" },
 			{ desktop: "frontend-mentor/testimonial-grid.png" },
+			{ desktop: "frontend-mentor/easybank.png" },
 			]
 
 
