@@ -16,7 +16,7 @@ const socialLinks = [
   },
   {
     name: "Email",
-    url: "mailto:mohap710@gmail.com",
+    url: "mailto:mohab.m.salman@gmail.com",
     img: "email.svg",
   },
 ];
