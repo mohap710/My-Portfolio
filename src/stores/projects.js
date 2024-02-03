@@ -35,12 +35,11 @@ export const useProjectStore = defineStore("projects", () => {
 		},
 		{
 			id: 3,
-			title: "Salalah è stupenda",
-			summary: `Imagine embarking on a journey to unveil the hidden treasures of Salalah, Oman's emerald oasis. Now, imagine bringing that journey to life in both English and Italian, inviting the world to discover its magic. This was the challenge I embraced in building the website for Wonderfull Salalah, a passionate tour operator.`,
+			title: "Ciao Salalah",
+			summary: `Imagine embarking on a journey to unveil the hidden treasures of Salalah, Oman's emerald oasis. Now, imagine bringing that journey to life in both English and Italian, inviting the world to discover its magic. This was the challenge I embraced in building the website for Ciao Salalah, a passionate tour operator.`,
 			role: "Frontend Developer",
 			stack: ["html", "css", "javascript"],
-			liveLink: "https://mohap710.github.io/Salalah-e-Stupenda/",
-			githubLink: "https://github.com/mohap710/Salalah-e-Stupenda",
+			liveLink: "https://www.ciaosalalah.com/",
 			screenshots: [
 				{ desktop: "salalah/1.png" },
 				{ desktop: "salalah/2.png" },
