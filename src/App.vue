@@ -25,13 +25,20 @@ swiper-slide {
 swiper-slide:active {
   cursor: grabbing;
 }
+
 swiper-container::part(bullet-active) {
   background-color: var(--soft-blue);
+  width: 30px;
+  border-radius: 10px;
+  transition: all ease-out 300ms;
 }
+
 swiper-container::part(button-next),
 swiper-container::part(button-prev) {
   color: var(--soft-blue);
+  transition: all ease-out 300ms;
 }
+
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
