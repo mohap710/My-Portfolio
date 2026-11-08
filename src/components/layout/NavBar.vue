@@ -7,8 +7,8 @@ let nav = ref(null);
 let header = ref(null);
 const navLinks = [
   { name: "Home", hash: "#home", class: "active" },
-  { name: "About", hash: "#about" },
   { name: "Portfolio", hash: "#portfolio" },
+  { name: "About", hash: "#about" },
   { name: "Testimonials", hash: "#testimonials" },
   { name: "Contact", hash: "#contact" },
 ];

@@ -73,7 +73,7 @@ const props = defineProps({
   top: 0;
   width: 140px;
   height: 120px;
-  background-color: white;
+  background-color: var(--body-bg);
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
   box-shadow: 0 10px 0 var(--dark-blue),
@@ -89,7 +89,7 @@ const props = defineProps({
   width: 50px;
   aspect-ratio: 1;
   border-top-right-radius: 50px;
-  box-shadow: 15px -15px 0 13px white;
+  box-shadow: 15px -15px 0 13px var(--body-bg);
   background-color: transparent;
 }
 .avatar::after {
@@ -101,7 +101,7 @@ const props = defineProps({
   width: 50px;
   aspect-ratio: 1;
   border-top-left-radius: 50px;
-  box-shadow: -15px -15px 0 10px white;
+  box-shadow: -15px -15px 0 10px var(--body-bg);
   background-color: transparent;
 }
 

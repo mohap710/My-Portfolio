@@ -2,22 +2,38 @@ import { defineStore } from "pinia";
 
 export const useProjectStore = defineStore("projects", () => {
 	const projects = [
+		// {
+		// 	id: 1,
+		// 	title: "Sayed Nafsak",
+		// 	summary: `Sayed Nafsak is an innovative online platform that revolutionizes the way freelancers and clients connect and collaborate. It provides a seamless and secure environment for skilled individuals to showcase their talents, connect with potential clients, and turn their expertise into profitable ventures. By bridging the gap between freelancers and clients, Sayed Nafsak fosters a thriving ecosystem that empowers individuals to pursue their passions and achieve financial success.`,
+		// 	role: "Full-stack Developer",
+		// 	stack: ["vuejs", "nodejs", "graphql", "sequelize", "mysql"],
+		// 	liveLink: "https://sayidnafsak.com/",
+		// 	screenshots: [
+		// 		{ desktop: "SN/1.webp" },
+		// 		{ desktop: "SN/2.webp" },
+		// 		{ desktop: "SN/3.webp" },
+		// 		{ desktop: "SN/4.webp" },
+		// 		{ desktop: "SN/5.webp" },
+		// 	],
+		// 	is_active: false,
+		// is_featured: true
+		// },
 		{
 			id: 1,
-			title: "Sayed Nafsak",
-			summary: `Sayed Nafsak is an innovative online platform that revolutionizes the way freelancers and clients connect and collaborate. It provides a seamless and secure environment for skilled individuals to showcase their talents, connect with potential clients, and turn their expertise into profitable ventures. By bridging the gap between freelancers and clients, Sayed Nafsak fosters a thriving ecosystem that empowers individuals to pursue their passions and achieve financial success.`,
-			role: "Full-stack Developer",
-			stack: ["vuejs", "nodejs", "graphql", "sequelize", "mysql"],
-			liveLink: "https://sayidnafsak.com/",
+			title: "PixaTech",
+			summary: `Successfully developed a high-performing website for PixaTech, translating Figma designs into a pixel-perfect, user-friendly experience. By adhering to modern web design best practices and optimizing for speed, I achieved a 15% improvement in page load times, resulting in a more engaging and efficient user experience across all devices.`,
+			role: "Frontend Developer",
+			stack: ["html", "css", "javascript"],
+			liveLink: "https://pixatech.ae/",
 			screenshots: [
-				{ desktop: "SN/1.webp" },
-				{ desktop: "SN/2.webp" },
-				{ desktop: "SN/3.webp" },
-				{ desktop: "SN/4.webp" },
-				{ desktop: "SN/5.webp" },
-			]
-
-
+				{ desktop: "pixatech/pixatech-desktop1.png" },
+				{ desktop: "pixatech/pixatech-desktop2.png" },
+				{ desktop: "pixatech/pixatech-mobile1.png" },
+				{ desktop: "pixatech/pixatech-mobile2.png" },
+			],
+			is_active: true,
+			is_featured: true
 		},
 		{
 			id: 2,
@@ -31,7 +47,9 @@ export const useProjectStore = defineStore("projects", () => {
 				{ desktop: "afro-tech/2-desktop.png" },
 				{ desktop: "afro-tech/3-desktop.png" },
 				{ desktop: "afro-tech/4.webp" }
-			]
+			],
+			is_active: true,
+			is_featured: true
 		},
 		{
 			id: 3,
@@ -44,7 +62,9 @@ export const useProjectStore = defineStore("projects", () => {
 				{ desktop: "salalah/1.png" },
 				{ desktop: "salalah/2.png" },
 				{ desktop: "salalah/3.png" },
-			]
+			],
+			is_active: true,
+			is_featured: true
 
 
 		},
@@ -59,7 +79,9 @@ export const useProjectStore = defineStore("projects", () => {
 			screenshots: [{ desktop: "online-edu/1.webp" },
 			{ desktop: "online-edu/2.webp" },
 			{ desktop: "online-edu/3.webp" },
-			{ desktop: "online-edu/4.webp" }]
+			{ desktop: "online-edu/4.webp" }],
+			is_active: true,
+			is_featured: false
 
 
 		},
@@ -70,16 +92,19 @@ export const useProjectStore = defineStore("projects", () => {
 			role: "Frontend Developer",
 			stack: ["html", "css"],
 			liveLink: "https://www.frontendmentor.io/profile/mohap710",
-			screenshots: [{ desktop: "frontend-mentor/chat-app.png" },
+			screenshots: [
+			{ desktop: "frontend-mentor/chat-app.png" },
 			{ desktop: "frontend-mentor/fylo.png" },
 			{ desktop: "frontend-mentor/data-storage.png" },
 			{ desktop: "frontend-mentor/social-proof.png" },
 			{ desktop: "frontend-mentor/testimonial-grid.png" },
 			{ desktop: "frontend-mentor/easybank.png" },
-			]
-
-
+			],
+			is_active: true,
+			is_featured: false
 		}
 	]
-	return { projects }
+
+	const featuredProjects = projects.filter((project)=>project.is_featured)
+	return { projects, featuredProjects }
 });

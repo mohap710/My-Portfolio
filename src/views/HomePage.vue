@@ -35,31 +35,31 @@ const ContactForm = defineAsyncComponent(() =>
   <!-- Hero Section -->
   <Suspense>
     <HeroSection id="home" />
-    <template #fallback>
+    <!-- <template #fallback>
       <HeroSectionSkeleton />
-    </template>
+    </template> -->
   </Suspense>
 
   <!-- Portfolio -->
   <Suspense>
     <ProjectsShowcase id="portfolio" />
-    <template #fallback>
+    <!-- <template #fallback>
       <ProjectCardSkeleton v-for="_ in Array(2)" />
-    </template>
+    </template> -->
   </Suspense>
 
   <!-- About Section -->
   <Suspense>
     <AboutSection id="about" />
-    <template #fallback>
+    <!-- <template #fallback>
       <AboutSectionSkeleton />
-    </template>
+    </template> -->
   </Suspense>
 
   <!-- Testimonials -->
   <Suspense>
     <TestimonialSection />
-    <template #fallback>
+    <!-- <template #fallback>
       <div class="testimonials-container">
         <swiper-container
           :breakpoints="{
@@ -79,7 +79,7 @@ const ContactForm = defineAsyncComponent(() =>
           </swiper-slide>
         </swiper-container>
       </div>
-    </template>
+    </template> -->
   </Suspense>
   <!-- Contact -->
   <ContactForm id="contact" />

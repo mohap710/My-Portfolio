@@ -18,6 +18,7 @@ await timeoutDelay(2000);
         autoplay-delay="5000"
         speed="1000"
         loop="true"
+        space-between="30"
         :breakpoints="{
           1024: {
             slidesPerView: 3,

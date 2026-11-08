@@ -16,11 +16,8 @@ await timeoutDelay(1000);
         for positive impact, I'm dedicated to making a meaningful difference in
         the world.
       </p>
-      <img class="profile-pic" src="@images/aboutMe.svg" alt="" />
-    </div>
-    <div class="skills">
-      <h2>Domain of expertise</h2>
       <SkillsGrid />
+      <!-- <img class="profile-pic" src="@images/aboutMe.svg" alt="" /> -->
     </div>
   </section>
 </template>

@@ -1,11 +1,12 @@
 <script setup>
-import { EffectFlip, Autoplay } from "swiper/modules";
+import { EffectFlip, EffectCreative, Autoplay } from "swiper/modules";
 import { getImageUrl } from "../utils/imgUrl";
 import timeoutDelay from "../utils/timeoutDelay";
 const props = defineProps({
   project: {
     type: Object,
   },
+  idx: Number,
 });
 await timeoutDelay(3000);
 </script>
@@ -14,7 +15,7 @@ await timeoutDelay(3000);
   <div class="project-card">
     <div class="info">
       <h4 class="project-title">
-        <span class="number">{{ project.id }}.</span>
+        <span class="number">{{ idx }}.</span>
         {{ project.title }}
       </h4>
       <div class="summary">
@@ -47,10 +48,10 @@ await timeoutDelay(3000);
     </div>
     <div class="mockup">
       <swiper-container
-        :modules="[EffectFlip, Autoplay]"
-        effect="flip"
+        :modules="[EffectCreative]"
+        effect="'creative'"
         slides-per-view="1"
-        autoplay-delay="4000"
+        autoplay-delay="3500"
         speed="1000"
         loop="true"
         pagination="true"
