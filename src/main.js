@@ -1,26 +1,24 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
-import { VTooltip } from "floating-vue";
-
-
-
-
+import { ViteSSG } from "vite-ssg";
 import App from "./App.vue";
-import router from "./router";
+import { routes } from "./router/routes.js";
+import reveal from "./directives/reveal.js";
 
+import "@fontsource-variable/bricolage-grotesque/wdth.css";
+import "@fontsource-variable/figtree/wght.css";
 import "./assets/css/main.css";
-import 'floating-vue/dist/style.css'
 
-import VueSweetalert2 from "vue-sweetalert2";
-import 'sweetalert2/dist/sweetalert2.min.css';
-
-const app = createApp(App);
-
-app.use(createPinia());
-app.use(router);
-
-app.use(VueSweetalert2);
-window.Swal = app.config.globalProperties.$swal;
-
-app.directive("tooltip", VTooltip)
-app.mount("#app");
+export const createApp = ViteSSG(
+  App,
+  {
+    routes,
+    base: import.meta.env.BASE_URL,
+    scrollBehavior(to, from, saved) {
+      if (saved) return saved;
+      if (to.hash) return { el: to.hash, behavior: "smooth", top: 80 };
+      return { top: 0 };
+    },
+  },
+  ({ app }) => {
+    app.directive("reveal", reveal);
+  },
+);

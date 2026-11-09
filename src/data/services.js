@@ -1,0 +1,24 @@
+export const services = [
+  {
+    id: "frontend",
+    title: "Frontend builds",
+    body: "Responsive, accessible interfaces built from your designs, optimised for speed and polished with motion where it counts.",
+  },
+  {
+    id: "fullstack",
+    title: "Full-stack apps",
+    body: "End to end: data models, authentication, dashboards and deployment, with Vue on the front and Node or Laravel behind it.",
+  },
+  {
+    id: "api",
+    title: "APIs & back-end",
+    body: "Clean REST and GraphQL services with sensible schemas, validation and documentation your team can pick up.",
+  },
+];
+
+export const process = [
+  { title: "Discover", body: "Goals, audience and scope." },
+  { title: "Design", body: "Flows and visuals agreed." },
+  { title: "Build", body: "Weekly demos, clean code." },
+  { title: "Launch", body: "Deploy, test, support." },
+];

@@ -1,3 +1,168 @@
-@import "./base.css";
-@import "./utils.css";
-@import "./animations.css";
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Design tokens (70 / 30 / 10): beige dominant, navy secondary, royal accent
+   ------------------------------------------------------------------ */
+@theme {
+  --color-beige: #f1e8d8;
+  --color-beige-2: #e8dcc6;
+  --color-beige-3: #dccbab;
+  --color-cream: #fffaf0;
+  --color-navy: #0f1c3f;
+  --color-navy-2: #22356f;
+  --color-royal: #1a3a9c;
+  --color-sky: #7f9be0;
+  --color-sand: #ecc79b;
+  --color-muted: #44507a;
+  --color-success: #2fd37a;
+
+  --font-display: "Bricolage Grotesque Variable", "Arial Narrow", sans-serif;
+  --font-sans: "Figtree Variable", system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.2, 0.9, 0.3, 1.25);
+
+  --shadow-soft: 0 20px 40px -20px rgb(15 28 63 / 0.2);
+  --shadow-lift: 0 30px 50px -28px rgb(15 28 63 / 0.35);
+
+  --animate-morph: morph 16s ease-in-out infinite alternate;
+  --animate-drift: drift 14s ease-in-out infinite alternate;
+  --animate-float: float 9s ease-in-out infinite alternate;
+  --animate-spin-slow: spin 40s linear infinite;
+  --animate-marquee: marquee 22s linear infinite;
+  --animate-pulse-ring: pulse-ring 2s ease-out infinite;
+
+  @keyframes morph {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    100% { border-radius: 50% 50% 40% 60% / 40% 70% 40% 60%; transform: rotate(18deg); }
+  }
+  @keyframes drift {
+    to { transform: translate3d(0, -4%, 0) scale(1.08); }
+  }
+  @keyframes float {
+    to { transform: translateY(-12px); }
+  }
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  @keyframes pulse-ring {
+    50% { box-shadow: 0 0 0 8px rgb(47 211 122 / 0); }
+  }
+}
+
+/* ------------------------------------------------------------------
+   Small utilities Tailwind does not ship
+   ------------------------------------------------------------------ */
+
+/* outline drawn behind the fill: keeps big text readable over the photo */
+@utility text-halo {
+  -webkit-text-stroke: 10px var(--color-beige);
+  paint-order: stroke fill;
+}
+
+/* the navbar surface once the page is scrolled (the only blur on the site) */
+@utility glass {
+  background-color: rgb(255 250 240 / 0.62);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  backdrop-filter: blur(18px) saturate(1.4);
+  border-color: rgb(15 28 63 / 0.1);
+  box-shadow: 0 10px 30px -18px rgb(15 28 63 / 0.35);
+}
+
+/* scroll-reveal state toggled by the v-reveal directive */
+@utility reveal {
+  opacity: 0;
+  translate: 0 40px;
+  transition: opacity 0.9s var(--ease-out-expo), translate 0.9s var(--ease-out-expo);
+  transition-delay: var(--reveal-delay, 0s);
+  &.is-in {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Case study prose (Markdown rendered by unplugin-vue-markdown)
+   ------------------------------------------------------------------ */
+@layer components {
+  .case-study {
+    @apply max-w-[68ch] text-[17px] leading-[1.75] text-navy/85;
+  }
+  .case-study > :first-child {
+    margin-top: 0;
+  }
+  .case-study h2 {
+    @apply mt-14 mb-4 font-display text-[clamp(30px,3.6vw,44px)] leading-none font-extrabold text-navy uppercase;
+    font-stretch: 75%;
+  }
+  .case-study h2::after {
+    content: "";
+    @apply mt-4 block h-1 w-14 rounded-full bg-sand;
+  }
+  .case-study h3 {
+    @apply mt-9 mb-3 text-xl font-extrabold text-navy;
+  }
+  .case-study p {
+    @apply my-4;
+  }
+  .case-study ul,
+  .case-study ol {
+    @apply my-5 grid gap-3 pl-0;
+  }
+  .case-study li {
+    @apply relative list-none pl-8;
+  }
+  .case-study ul > li::before {
+    content: "";
+    @apply absolute top-[0.62em] left-1 size-2.5 rotate-45 rounded-[3px] bg-royal;
+  }
+  .case-study strong {
+    @apply font-extrabold text-navy;
+  }
+  .case-study code {
+    @apply rounded-md bg-navy/8 px-1.5 py-0.5 text-[0.88em] text-royal;
+  }
+  .case-study a {
+    @apply font-bold text-royal underline underline-offset-4;
+  }
+}
+
+/* ------------------------------------------------------------------
+   Base
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    /* decorative blobs, separators and the tilted marquee bleed past the edges on purpose;
+       clip (not hidden) so position: sticky keeps working */
+    overflow-x: clip;
+  }
+  body {
+    @apply bg-beige font-sans text-navy;
+    overflow-x: clip;
+  }
+  ::selection {
+    @apply bg-navy text-beige;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-royal);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
