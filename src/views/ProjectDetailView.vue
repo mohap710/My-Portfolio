@@ -31,7 +31,6 @@ useHead(() =>
           { name: "description", content: project.value.summary },
           { property: "og:title", content: project.value.title },
           { property: "og:description", content: project.value.summary },
-          { property: "og:image", content: project.value.cover },
         ],
       }
     : {},

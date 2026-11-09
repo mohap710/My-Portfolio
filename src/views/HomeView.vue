@@ -16,7 +16,6 @@ useHead({
     { name: "description", content: `${site.name}, ${site.role}. ${site.tagline}` },
     { property: "og:title", content: `${site.name} · ${site.role}` },
     { property: "og:description", content: site.tagline },
-    { property: "og:type", content: "website" },
   ],
 });
 </script>

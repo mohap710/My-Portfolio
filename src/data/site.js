@@ -1,6 +1,7 @@
 export const site = {
   name: "Mohab Alhassan",
   role: "Full-stack Developer",
+  url: "https://mohap710.github.io/My-Portfolio/", // absolute site URL, used for share previews
   tagline: "Vue, Node & Laravel. I build web products that feel as good as they run.",
   email: "mohab.m.salman@gmail.com",
   cvUrl: `${import.meta.env.BASE_URL}cv.pdf`,
