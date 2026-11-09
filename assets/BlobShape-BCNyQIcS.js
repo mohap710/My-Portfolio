@@ -1,0 +1,1 @@
+import{C as e,j as t}from"./app-9Lky7Vqc.js";var n=(e,t)=>{let n=e.__vccOpts||e;for(let[e,r]of t)n[e]=r;return n},r={},i={"aria-hidden":`true`,class:`pointer-events-none absolute z-0 animate-morph rounded-[60%_40%_30%_70%/60%_30%_70%_40%]`};function a(n,r){return t(),e(`span`,i)}var o=n(r,[[`render`,a]]);export{n,o as t};
