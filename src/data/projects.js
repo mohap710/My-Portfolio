@@ -2,13 +2,13 @@
 // `npm run capture` refreshes them (optional captureUrl / captureMaxHeight per project).
 // Optional `desktop` / `mobile`: raw full-page captures (1440px / 390px wide, WebP, no mockups),
 // e.g. desktop: "pixatech/desktop.webp". The cards and detail page draw the device frames in HTML.
-// Optional `hook`: one line on the trickiest part, shown at the top of the detail page.
+// Optional `hook`: one standout line on the skill this project shows, shown at the top of the detail page.
 // `hidden: true` keeps a project out of the site, its routes and the sitemap.
 // Phase 2 adds a Markdown case study per slug in src/content/projects/<slug>.md.
 export const projects = [
   {
     slug: "sahem-uae",
-    hook: "One back-end serving the website, both mobile apps and the team's dashboard, in two languages, without any of them drifting out of sync.",
+    hook: "Launched a public website on top of a live production system without changing a single URL the published iOS and Android apps rely on, so no app update was needed.",
     title: "Sahem",
     summary:
       "UAE donation platform that lets people donate items or support charity campaigns in a few taps, with doorstep pickups, rewards and bilingual web and mobile experiences.",
@@ -31,7 +31,7 @@ export const projects = [
   },
   {
     slug: "depth-action",
-    hook: "Making Arabic and English feel equally native: real right-to-left layouts and complete content in both, not a mirrored afterthought.",
+    hook: "Designed three complete visual directions, then built the chosen one as a fully bilingual Laravel site and migrated every old article into it, cleaned of page-builder markup.",
     title: "Depth Action Organization",
     summary:
       "Bilingual Arabic/English website for a humanitarian NGO working in Sudan, presenting its programmes, projects, impact and news, with clear paths to donate, volunteer and join.",
@@ -53,7 +53,7 @@ export const projects = [
   },
   {
     slug: "awadh-almheiri",
-    hook: "Publish once, appear in six languages: every post is translated in the background, so the team never waits and never needs a developer.",
+    hook: "Editors publish once and a post goes live in every language: AI translation runs in background queue jobs, so nobody waits and no developer is needed.",
     title: "Awadh Almheiri Law Firm",
     summary:
       "Six-language website for a Dubai law firm with AI translation on publish, SEO-friendly localised URLs and an admin panel the team runs on its own.",
@@ -76,7 +76,7 @@ export const projects = [
   },
   {
     slug: "sahemnational",
-    hook: "Letting the team launch a new Goodness Olympics edition, open school registrations and share results entirely on their own.",
+    hook: "Built a school competition platform with seasonal editions, multi-step registration and results, plus background WebP conversion that keeps a photo-heavy site fast.",
     title: "Sahem Community Initiatives",
     summary:
       "Bilingual website for Sahem Managing Community Initiatives, presenting its programmes and the Goodness Olympics competition.",
@@ -93,7 +93,7 @@ export const projects = [
   },
   {
     slug: "pixatech",
-    hook: "Matching the Figma designs pixel for pixel on every screen size while still making pages load 15% faster.",
+    hook: "Turned Figma designs into a pixel-perfect site and cut page load times by 15%, measured across devices.",
     title: "PixaTech",
     summary:
       "Translated Figma designs into a pixel-perfect, user-friendly website and improved page load times by 15% across all devices.",
@@ -112,7 +112,7 @@ export const projects = [
   },
   {
     slug: "afrotech",
-    hook: "Folding multi-step database queries into single calls, so course pages respond faster with less network traffic.",
+    hook: "Designed 20+ documented REST APIs and folded multi-step SQL queries into single stored-procedure calls for faster responses.",
     title: "Afrotech",
     summary:
       "Back-end for a Sudanese professional training centre offering a wide range of courses to the local community.",
@@ -126,7 +126,7 @@ export const projects = [
   },
   {
     slug: "ciao-salalah",
-    hook: "Building a bilingual English/Italian site that sells the feeling of a place, while still being found on search.",
+    hook: "A bilingual English/Italian tourism site, hand-built with no framework: light enough to load fast on mobile networks and structured to be found on search.",
     title: "Ciao Salalah",
     summary:
       "Bilingual English/Italian website for a tour operator inviting the world to discover Salalah, Oman's emerald oasis.",
