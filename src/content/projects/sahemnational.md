@@ -1,34 +1,35 @@
 ## Overview
 
-Sahem Managing Community Initiatives designs and runs community and corporate social responsibility programmes in the UAE, including the **Goodness Olympics**, which brings schools together around charitable work. The organisation needed a bilingual website to present its initiatives and run the Goodness Olympics online.
+Sahem Managing Community Initiatives is a UAE company that leads corporate social responsibility (CSR) programmes, connecting businesses with initiatives that serve the community. It needed a fresh, modern website that matched its standing and gave it a clear, credible presence online.
 
 ## My role
 
-Full-stack developer: the public website and the content management behind it.
+Full-stack developer: the design implementation, the public website and the content management behind it.
 
 ## What I built
 
-### A bilingual website
+### A modern corporate presence
 
-- Home, about, initiatives and contact pages in **Arabic and English**, with a full right-to-left Arabic layout.
-- An impact section with headline figures and a large wall of partner logos.
-- A photo gallery and an app promotion section with the screenshot shown in a 3D phone mock-up.
+- A clean, contemporary look that reflects the brand and puts the company's initiatives front and centre.
+- Home, about, initiatives and contact pages that explain what the company does and who it works with.
+- An impact section with headline figures and a wall of partner logos to build trust at a glance.
+- A photo gallery and an app promotion section with a 3D phone mock-up.
 
-### Goodness Olympics online
+### Bilingual from the ground up
 
-- Public pages for each **competition edition**, with its participating groups and results.
-- A friendly **multi-step registration form** for schools.
+- Full **Arabic and English** versions with a language switch on every page.
+- True **right-to-left layouts** in Arabic, so sliders, headings and grids read naturally in both languages.
 
 ### Content management
 
-- Tools for the team to publish new editions, review registrations, update the gallery and manage partners without a developer.
+- An admin panel that lets the team update initiatives, the gallery and partners without a developer.
 
 ## Technical highlights
 
 - **Laravel 12** with **Tailwind CSS**, **Alpine.js** and **MySQL**.
-- Automatic **WebP conversion** of gallery images in the background, keeping pages light without extra effort from editors.
-- Careful right-to-left work so sliders, headings and layouts read naturally in both languages.
+- Automatic **WebP conversion** of uploaded images in the background, keeping pages light without extra effort from editors.
+- A mobile-first, responsive build that holds up from large screens down to phones.
 
 ## Outcome
 
-The organisation can launch a new Goodness Olympics edition, welcome schools and share results on its own, on a website that works equally well in Arabic and English.
+The company now has a modern online home that presents its CSR work with confidence in both Arabic and English, and its own team keeps it up to date.

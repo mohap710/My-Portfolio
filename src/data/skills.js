@@ -30,4 +30,5 @@ export const stackLabels = {
   tailwindcss: "Tailwind CSS",
   alpinejs: "Alpine.js",
   firebase: "Firebase",
+  angularjs: "AngularJS",
 };
