@@ -58,6 +58,10 @@ useHead(() =>
             <h1 class="font-display text-[clamp(48px,8vw,120px)] leading-[0.88] font-extrabold uppercase font-stretch-condensed">
               {{ project.title }}
             </h1>
+            <p v-if="project.hook" class="mt-6 max-w-[46ch] border-l-4 border-sand pl-4 text-lg leading-snug font-semibold text-navy">
+              <span class="mb-1 block text-[12px] font-extrabold tracking-[0.2em] text-royal uppercase">The tricky part</span>
+              {{ project.hook }}
+            </p>
           </div>
           <div>
             <p class="text-lg text-muted">{{ project.summary }}</p>

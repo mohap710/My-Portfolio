@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => {
       // static routes + one prerendered page per project
       includedRoutes: (paths) => [
         ...paths.filter((p) => !p.includes(":")),
-        ...projects.map((p) => `/projects/${p.slug}`),
+        ...projects.filter((p) => !p.hidden).map((p) => `/projects/${p.slug}`),
       ],
     },
   };

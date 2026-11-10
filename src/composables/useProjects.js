@@ -3,7 +3,8 @@ import { projects as source } from "@/data/projects.js";
 import { assetUrl } from "./useAsset.js";
 
 // Adds resolved image URLs once; keeps data/projects.js plain and serialisable.
-const projects = [...source]
+const projects = source
+  .filter((p) => !p.hidden)
   .sort((a, b) => a.order - b.order)
   .map((p) => ({
     ...p,

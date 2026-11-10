@@ -2,10 +2,13 @@
 // `npm run capture` refreshes them (optional captureUrl / captureMaxHeight per project).
 // Optional `desktop` / `mobile`: raw full-page captures (1440px / 390px wide, WebP, no mockups),
 // e.g. desktop: "pixatech/desktop.webp". The cards and detail page draw the device frames in HTML.
+// Optional `hook`: one line on the trickiest part, shown at the top of the detail page.
+// `hidden: true` keeps a project out of the site, its routes and the sitemap.
 // Phase 2 adds a Markdown case study per slug in src/content/projects/<slug>.md.
 export const projects = [
   {
     slug: "sahem-uae",
+    hook: "One back-end serving the website, both mobile apps and the team's dashboard, in two languages, without any of them drifting out of sync.",
     title: "Sahem",
     summary:
       "UAE donation platform that lets people donate items or support charity campaigns in a few taps, with doorstep pickups, rewards and bilingual web and mobile experiences.",
@@ -24,10 +27,11 @@ export const projects = [
       "Back-end powering the iOS and Android apps",
     ],
     featured: true,
-    order: 1,
+    order: 2,
   },
   {
     slug: "depth-action",
+    hook: "Making Arabic and English feel equally native: real right-to-left layouts and complete content in both, not a mirrored afterthought.",
     title: "Depth Action Organization",
     summary:
       "Bilingual Arabic/English website for a humanitarian NGO working in Sudan, presenting its programmes, projects, impact and news, with clear paths to donate, volunteer and join.",
@@ -45,10 +49,11 @@ export const projects = [
       "Content managed by the team without a developer",
     ],
     featured: true,
-    order: 2,
+    order: 3,
   },
   {
     slug: "awadh-almheiri",
+    hook: "Publish once, appear in six languages: every post is translated in the background, so the team never waits and never needs a developer.",
     title: "Awadh Almheiri Law Firm",
     summary:
       "Six-language website for a Dubai law firm with AI translation on publish, SEO-friendly localised URLs and an admin panel the team runs on its own.",
@@ -67,10 +72,11 @@ export const projects = [
       "Easy-to-use admin panel and newsletter tool",
     ],
     featured: true,
-    order: 3,
+    order: 1,
   },
   {
     slug: "sahemnational",
+    hook: "Letting the team launch a new Goodness Olympics edition, open school registrations and share results entirely on their own.",
     title: "Sahem Community Initiatives",
     summary:
       "Bilingual website for Sahem Managing Community Initiatives, presenting its programmes and the Goodness Olympics competition.",
@@ -87,6 +93,7 @@ export const projects = [
   },
   {
     slug: "pixatech",
+    hook: "Matching the Figma designs pixel for pixel on every screen size while still making pages load 15% faster.",
     title: "PixaTech",
     summary:
       "Translated Figma designs into a pixel-perfect, user-friendly website and improved page load times by 15% across all devices.",
@@ -105,6 +112,7 @@ export const projects = [
   },
   {
     slug: "afrotech",
+    hook: "Folding multi-step database queries into single calls, so course pages respond faster with less network traffic.",
     title: "Afrotech",
     summary:
       "Back-end for a Sudanese professional training centre offering a wide range of courses to the local community.",
@@ -118,19 +126,21 @@ export const projects = [
   },
   {
     slug: "ciao-salalah",
+    hook: "Building a bilingual English/Italian site that sells the feeling of a place, while still being found on search.",
     title: "Ciao Salalah",
     summary:
       "Bilingual English/Italian website for a tour operator inviting the world to discover Salalah, Oman's emerald oasis.",
     role: "Frontend Developer",
     year: 2023,
     stack: ["html", "css", "javascript"],
-    liveLink: "https://www.ciaosalalah.com/",
+    liveLink: "https://mohap710.github.io/Salalah-e-Stupenda/",
     gallery: ["salalah/1.png", "salalah/2.png", "salalah/3.png"],
     featured: false,
     order: 7,
   },
   {
     slug: "online-edu",
+    hidden: true, // kept for reference, not shown on the site
     title: "Online-edu",
     summary: "A responsive e-learning platform built to apply the skills from a full-stack web development course.",
     role: "Frontend Developer",
@@ -144,6 +154,7 @@ export const projects = [
   },
   {
     slug: "frontend-mentor",
+    hidden: true, // kept for reference, not shown on the site
     title: "Frontend Mentor Challenges",
     summary: "Real-world front-end challenges that sharpen HTML, CSS and JavaScript with a production-like workflow.",
     role: "Frontend Developer",
