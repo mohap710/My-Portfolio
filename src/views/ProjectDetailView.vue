@@ -62,9 +62,8 @@ useHead(() =>
               {{ project.hook }}
             </p>
           </div>
-          <div>
-            <p class="text-lg text-muted">{{ project.summary }}</p>
-            <div class="mt-6 flex flex-wrap gap-3">
+          <div class="lg:justify-self-end">
+            <div class="flex flex-wrap gap-3">
               <BaseButton :href="project.liveLink" variant="primary" target="_blank" rel="noopener">
                 Visit live site <AppIcon name="arrow-up-right" class="!size-4" />
               </BaseButton>
@@ -98,15 +97,6 @@ useHead(() =>
                   {{ stackLabels[s] ?? s }}
                 </li>
               </ul>
-            </section>
-            <section v-if="project.highlights?.length" class="rounded-[28px] bg-navy p-6 text-beige">
-              <h2 class="font-display text-2xl font-extrabold uppercase font-stretch-condensed">At a glance</h2>
-              <ol class="mt-4 grid gap-3 text-[15px]">
-                <li v-for="(h, i) in project.highlights" :key="h" class="flex gap-3">
-                  <span class="font-display text-xl font-extrabold text-sand">0{{ i + 1 }}</span>
-                  <span class="pt-0.5">{{ h }}</span>
-                </li>
-              </ol>
             </section>
             <BaseButton :href="project.liveLink" variant="navy" class="w-full" target="_blank" rel="noopener">
               Visit {{ project.title }} <AppIcon name="arrow-up-right" class="!size-4" />
