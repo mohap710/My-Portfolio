@@ -16,7 +16,7 @@ const { index, leaving, cycle, hold } = usePhraseRotator(site.hero.headlines, { 
 const maskUrl = `url("${photo}")`;
 // shared by the behind-copy and the masked front copy so both line up exactly
 const headlineClass =
-  "absolute top-[47%] left-1/2 z-[2] -translate-x-1/2 text-center font-display text-[clamp(60px,9.4vw,150px)] leading-[0.82] font-extrabold whitespace-nowrap uppercase font-stretch-normal tracking-wide max-lg:top-[60%] max-lg:text-[clamp(34px,12.5vw,100px)]";
+  "absolute top-[47%] left-1/2 z-[2] -translate-x-1/2 text-center font-display text-[clamp(60px,9.4vw,150px)] leading-[0.82] font-extrabold whitespace-nowrap uppercase font-stretch-normal tracking-wide max-lg:top-[71%] max-lg:text-[clamp(34px,15vw,100px)]";
 </script>
 
 <template>
@@ -37,7 +37,7 @@ const headlineClass =
       width="568"
       height="894"
       fetchpriority="high"
-      class="absolute bottom-0 left-1/2 z-[3] h-[84%] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_24px_30px_rgb(15_28_63/0.2)] transition-transform duration-200 max-lg:h-[min(70%,140vw)]"
+      class="absolute bottom-0 left-1/2 z-[3] h-[84%] w-auto max-w-none -translate-x-1/2 drop-shadow-[0_24px_30px_rgb(15_28_63/0.2)] transition-transform duration-200 max-lg:h-[min(48%,96vw)]"
       :style="{ transform: `translateX(${drift}px)` }"
     />
 
@@ -102,8 +102,8 @@ const headlineClass =
 }
 @media (width < 64rem) {
   .silhouette {
-    -webkit-mask-size: auto min(70%, 140vw);
-    mask-size: auto min(70%, 140vw);
+    -webkit-mask-size: auto min(48%, 96vw);
+    mask-size: auto min(48%, 96vw);
   }
 }
 .progress {
