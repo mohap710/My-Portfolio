@@ -25,7 +25,7 @@ export const site = {
       ["Shipping", "Ideas"],
       ["Crafting", "Interfaces"],
     ],
-    stat: { value: "9+", label: "client projects shipped" },
+    stat: { value: "7+", label: "client projects shipped" },
   },
   marquee: ["Frontend", "Back-end", "APIs", "Vue", "Node", "Laravel"],
   about: {
@@ -35,7 +35,7 @@ export const site = {
     tags: ["Vue ✺ Node", "Open to work"],
     stats: [
       { value: "5+", label: "years experience" },
-      { value: "9+", label: "projects shipped" },
+      { value: "7+", label: "projects shipped" },
       { value: "120+", label: "APIs designed" },
     ],
   },
