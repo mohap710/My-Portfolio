@@ -8,7 +8,7 @@
 export const projects = [
   {
     slug: "sahem-uae",
-    hook: "Launched a public website on top of a live production system without changing a single URL the published iOS and Android apps rely on, so no app update was needed.",
+    hook: "Replaced manual, record-by-record data entry with an automated queue-based sync, complete with logging, failure handling and automatic re-sync, on a 35+ model Laravel back-end that powers the apps, website and dashboard.",
     title: "Sahem",
     summary:
       "UAE donation platform that lets people donate items or support charity campaigns in a few taps, with doorstep pickups, rewards and bilingual web and mobile experiences.",

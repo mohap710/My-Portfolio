@@ -31,7 +31,10 @@ Full-stack developer across the platform: the web experience donors see, the bac
 
 ## Technical highlights
 
-- **Laravel** back-end with a **Vue.js** dashboard, **MySQL** and **Firebase** for push notifications.
+- A scalable **Laravel** back-end with **35+ Eloquent models** powering the mobile apps, the website and the team's dashboard, with a **Vue.js** dashboard, **MySQL** and **Firebase** for push notifications.
+- An **automated, queue-based sync** with the client's operations system, with dedicated logging, failure handling and automatic re-sync, replacing manual record-by-record data entry.
+- **Normalised database schemas** for data integrity and faster queries, cutting database load by **17%**.
+- **25+ documented APIs**, with request and response examples and error-handling guidelines, so the mobile team could integrate smoothly.
 - Added a public website to an existing production system **without changing any URL the published mobile apps depend on**, so no app update was needed.
 - Built the website as an isolated layer that could ship alongside a parallel redesign of the dashboard.
 - SEO groundwork: share tags on every page, a default share image and an automatically generated sitemap.
