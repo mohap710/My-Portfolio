@@ -1,11 +1,10 @@
 <script setup>
 import { site } from "@/data/site.js";
 import { skills } from "@/data/skills.js";
-import photo from "@/assets/images/about.webp";
+import portrait from "@/assets/images/about-navy.svg";
 import CloudSeparator from "@/components/base/CloudSeparator.vue";
 import SectionHeading from "@/components/base/SectionHeading.vue";
 import BaseButton from "@/components/base/BaseButton.vue";
-import BasePill from "@/components/base/BasePill.vue";
 import SkillPills from "./SkillPills.vue";
 
 const { about } = site;
@@ -15,20 +14,9 @@ const { about } = site;
   <section id="about" class="relative scroll-mt-20 bg-beige pt-24 pb-24">
     <CloudSeparator fill="var(--color-beige)" variant="wave" />
     <div class="relative z-[2] mx-auto grid max-w-[1240px] items-center gap-16 px-5 sm:px-9 lg:grid-cols-[1fr_1.1fr]">
-      <!-- static portrait: same beige backdrop as the page, framed in a soft rounded card -->
-      <figure v-reveal class="relative mx-auto w-full max-w-[460px]">
-        <img
-          :src="photo"
-          :alt="`Portrait of ${site.name}`"
-          width="825"
-          height="1024"
-          loading="lazy"
-          class="block aspect-[825/1024] w-full rounded-[40px] border border-navy/10 object-cover shadow-lift"
-        />
-        <BasePill class="absolute top-[10%] -right-[5%] z-[3] rotate-6 shadow-soft">{{ about.tags[0] }}</BasePill>
-        <BasePill tone="sand" class="absolute bottom-[12%] -left-[6%] z-[3] -rotate-5 shadow-soft">{{
-          about.tags[1]
-        }}</BasePill>
+      <!-- navy portrait drawn straight on the beige -->
+      <figure v-reveal class="relative mx-auto w-full max-w-[440px]">
+        <img :src="portrait" :alt="`Portrait of ${site.name}`" width="433" height="577" loading="lazy" class="block h-auto w-full" />
       </figure>
 
       <div>
